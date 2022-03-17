@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Infosec</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/muicss/0.10.3/css/mui.min.css" rel="stylesheet"
+        type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="main">
+        <div class="header-top mui-flexbox mui-between mui-align-center">
+            <a href="#" class="header-left">
+                <img class="logo" src="images/logo.svg" alt="logo">
+            </a>
+            <div class="header-right">
+                <div class="mui-dropdown">
+                    <button class="mui-btn mui-dropdown-btn" data-mui-toggle="dropdown">
+                        Administrator
+                        <span class="mui-caret"></span>
+                    </button>
+                    <ul class="mui-dropdown__menu">
+                        <li><a href="#"><i class="fa-solid fa-address-card"></i> Profile</a></li>
+                        <li><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a></li>
+                    </ul>
+                </div>
+                <button class="mui-btn notifi"><i class="fa-solid fa-bell"></i></button>
+            </div>
+        </div>
+        <div id="sidedrawer" class="mui--no-user-select">
+            <div class="mui-divider"></div>
+            <ul class="aside-wrapper">
+                <li>
+                    <a href="#">
+                        <strong><i class="fa-solid fa-chart-line"></i> Dashboard</strong>
+                    </a>
+                </li>
+                <li>
+                    <strong><i class="fa-solid fa-bullseye"></i> Targets</strong>
+                    <ul>
+                        <li><a href="#">List Target</a></li>
+                        <li><a href="#">Add Target</a></li>
+                        <li><a href="#">Add Targets</a></li>
+                        <li><a href="#">Target Group</a></li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="listTargets.html">
+                        <strong><i class="fa-solid fa-qrcode"></i> Scans</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <strong><i class="fa-solid fa-bug"></i> Reports</strong>
+                    </a>
+                </li>
+                <li>
+                    <strong><i class="fa-solid fa-user"></i> Users</strong>
+                    <ul>
+                        <li><a href="#">List User</a></li>
+                        <li><a href="#">Add User</a></li>
+                        <li><a href="#">Account Settings</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <header id="header">
+            <div class="mui-appbar mui--appbar-line-height mui-panel">
+                <div class="mui-container-fluid">
+                    <div class="mui-flexbox mui-between mui-align-center">
+                        <div>
+                            <a
+                                class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer dark">☰</a>
+                            <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer dark">☰</a>
+                            <span class="mui--text-title mui--text-dark">Scan</span>
+                        </div>
+                        <div>
+                            <button class="mui-btn mui-btn--raised" title="Stop Scan"><i class="fa-solid fa-stop"></i>
+                                Stop Scan</button>
+                            <button class="mui-btn mui-btn--raised" title="Pause Scan"><i class="fa-solid fa-pause"></i>
+                                Pause Scan</button>
+                            <div class="mui-dropdown">
+                                <button class="mui-btn mui-btn--raised" data-mui-toggle="dropdown" title="Generate Report">
+                                    <i class="fa-solid fa-copy"></i> Generate Report
+                                    <span class="mui-caret"></span>
+                                </button>
+                                <ul class="mui-dropdown__menu">
+                                    <li><a href="#">Option 1</a></li>
+                                    <li><a href="#">Option 2</a></li>
+                                    <li><a href="#">Option 3</a></li>
+                                    <li><a href="#">Option 4</a></li>
+                                </ul>
+                            </div>
+                            <div class="mui-dropdown">
+                                <button class="mui-btn mui-btn--raised" data-mui-toggle="dropdown" title="WAF Export">
+                                   <i class="fa-solid fa-file-export"></i> WAF Export
+                                    <span class="mui-caret"></span>
+                                </button>
+                                <ul class="mui-dropdown__menu">
+                                    <li><a href="#">Option 1</a></li>
+                                    <li><a href="#">Option 2</a></li>
+                                    <li><a href="#">Option 3</a></li>
+                                    <li><a href="#">Option 4</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="content-wrapper" class="wrapper-information scroll-none">
+            <div class="mui--appbar-height"></div>
+            <ul class="mui-tabs__bar">
+                <li class="mui--is-active"><a data-mui-toggle="tab" data-mui-controls="pane-default-1">Scan
+                        Information</a></li>
+                <li><a data-mui-toggle="tab" data-mui-controls="pane-default-2">Vulnerabilities</a></li>
+                <li><a data-mui-toggle="tab" data-mui-controls="pane-default-3">Site Structure</a></li>
+                <li><a data-mui-toggle="tab" data-mui-controls="pane-default-4">Event</a></li>
+            </ul>
+            <div class="mui-container-fluid mui-tabs__pane mui--is-active scroll-auto" id="pane-default-1">
+                <div class="mui-row">
+                    <div class="mui-col-md-6">
+                        <div class="mui-panel mui-card">
+                            <div class="mui-flexbox mui-align-center">
+                                <img src="images/level-high.png" alt="">
+                                <div class="content">
+                                    <div class="mui--text-headline">Acunetix Threat Level 3</div>
+                                    <div class="mui--text-body1">One or more high-severity type vulnerabilities have
+                                        been discovered by the scanner. A malicious user can exploit these
+                                        vulnerabilities and compromise the backend database and/or deface your website.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mui-col-md-6">
+                        <div class="mui-panel mui-card activity">
+                            <div class="mui-card-header mui-flexbox mui-between mui-align-center">
+                                <span class="mui-card-title">Activity</span>
+                                <span>Completed</span>
+                            </div>
+                            <div class="mui-card-body">
+                                <div class="mui-item mui-flexbox mui-between">
+                                    <span>Overall Progress</span>
+                                    <span>100%</span>
+                                </div>
+                                <div class="progress-bar"></div>
+                                <div class="mui-item mui-flexbox mui-between">
+                                    <span class="status err">Scanning of testphp.vulnweb.com started</span>
+                                    <span>Mar 7, 2022, 2:54:58 PM</span>
+                                </div>
+                                <div class="mui-item mui-flexbox mui-between">
+                                    <span class="status err2">Scanning of testphp.vulnweb.com started</span>
+                                    <span>Mar 7, 2022, 2:54:58 PM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mui-row">
+                    <div class="mui-col-md-12">
+                        <div class="mui-panel mui-card mui-flexbox mui-around mui-align-center stats">
+                            <div class="stats-item text-center">
+                                <div class="stats-label">Scan Duration</div>
+                                <div class="stats-value">0m 56s</div>
+                            </div>
+                            <div class="stats-item text-center">
+                                <div class="stats-label">Requests</div>
+                                <div class="stats-value">1,046</div>
+                            </div>
+                            <div class="stats-item text-center">
+                                <div class="stats-label">Average Response Time</div>
+                                <div class="stats-value">191ms</div>
+                            </div>
+                            <div class="stats-item text-center">
+                                <div class="stats-label">Locations</div>
+                                <div class="stats-value">119</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mui-row">
+                    <div class="mui-col-md-6">
+                        <div class="mui-panel mui-card">
+                            <div class="mui-card-header mui-flexbox mui-between mui-align-center">
+                                <span class="mui-card-title">Target Information</span>
+                            </div>
+                            <div class="mui-card-body">
+                                <div class="mui-item mui-flexbox mui-between">
+                                    <span>Address</span>
+                                    <a href="#">http://testphp.vulnweb.com/</a>
+                                </div>
+                                <div class="mui-item mui-flexbox mui-between">
+                                    <span>Server</span>
+                                    <span>nginx/1.19.0</span>
+                                </div>
+                                <div class="mui-item mui-flexbox mui-between">
+                                    <span>Operating System</span>
+                                    <span>Unknown</span>
+                                </div>
+                                <div class="mui-item mui-flexbox mui-between">
+                                    <span>Identified Technologies</span>
+                                    <span>PHP</span>
+                                </div>
+                                <div class="mui-item mui-flexbox mui-between">
+                                    <span>Responsive</span>
+                                    <span>Yes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mui-col-md-6">
+                        <div class="mui-panel mui-card">
+                            <div class="mui-card-header mui-flexbox mui-between mui-align-center">
+                                <span class="mui-card-title">Latest Alerts</span>
+                                <div class="mui-flex star-inserted">
+                                    <span class="severity severity-high">17</span>
+                                    <span class="severity severity-medium">4</span>
+                                    <span class="severity severity-low">0</span>
+                                    <span class="severity severity-info">0</span>
+                                </div>
+                            </div>
+                            <div class="mui-card-body">
+                                <div class="mui-item mui-flexbox mui-between">
+                                    <a href="#" class="status bug">Cross site scripting</a>
+                                    <span>Mar 7, 2022, 2:55:17 PM</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mui-row">
+                    <div class="mui-col-md-6">
+                        <div class="mui-panel mui-card">
+                            <div class="mui-card-header mui-flexbox mui-between mui-align-center">
+                                <span class="mui-card-title">Discovered Hosts <span class="amount">(1)</span></span>
+                            </div>
+                            <div class="mui-card-body">
+                                <div class="mui-item mui-flexbox mui-between">
+                                    <span>https://www.acunetix.com</span>
+                                    <a href="#">Create Target</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="notification">
+
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/muicss/0.10.3/js/mui.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+.wrapper-information {
+  .mui-tabs__bar {
+    background-color: #eeeeee;
+    border-bottom: 1px solid #0000001f;
+    > li {
+      &.mui--is-active {
+        border-color: #e11f26;
+        > a {
+          color: #000;
+        }
+      }
+      a {
+        cursor: pointer;
+      }
+    }
+  }
+  .mui-card {
+    height: 200px;
+    &-header {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
+      .mui-card-title {
+        font-size: 17px;
+      }
+    }
+    &-body {
+      overflow-y: auto;
+      margin-top: 10px;
+      padding-right: 5px;
+      height: 75%;
+      &::-webkit-scrollbar {
+        width: 4px;
+      }
+      &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 5px;
+      }
+      .mui-item {
+        padding: 5px 0;
+        span:first-child {
+          width: 60%;
+        }
+      }
+    }
+  }
+  .progress-bar {
+    display: block;
+    height: 4px;
+    overflow: hidden;
+    position: relative;
+    transition: opacity 250ms linear;
+    width: 100%;
+    background-color: #e11f26;
+  }
+  .stats {
+    height: fit-content;
+    &::before {
+      content: none;
+    }
+    &::after {
+      content: none;
+    }
+    &-label {
+      font-size: 18px;
+    }
+    &-value {
+      font-size: 28px;
+    }
+  }
+}

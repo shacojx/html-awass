@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Infosec</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/muicss/0.10.3/css/mui.min.css" rel="stylesheet"
+        type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="main">
+        <div class="header-top mui-flexbox mui-between mui-align-center">
+            <a href="#" class="header-left">
+                <img class="logo" src="images/logo.svg" alt="logo">
+            </a>
+            <div class="header-right">
+                <div class="mui-dropdown">
+                    <button class="mui-btn mui-dropdown-btn" data-mui-toggle="dropdown">
+                        Administrator
+                        <span class="mui-caret"></span>
+                    </button>
+                    <ul class="mui-dropdown__menu">
+                        <li><a href="#"><i class="fa-solid fa-address-card"></i> Profile</a></li>
+                        <li><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a></li>
+                    </ul>
+                </div>
+                <button class="mui-btn notifi"><i class="fa-solid fa-bell"></i></button>
+            </div>
+        </div>
+        <div id="sidedrawer" class="mui--no-user-select">
+            <div class="mui-divider"></div>
+            <ul class="aside-wrapper">
+                <li>
+                    <a href="#">
+                        <strong><i class="fa-solid fa-chart-line"></i> Dashboard</strong>
+                    </a>
+                </li>
+                <li>
+                    <strong><i class="fa-solid fa-bullseye"></i> Targets</strong>
+                    <ul>
+                        <li><a href="#">List Target</a></li>
+                        <li><a href="#">Add Target</a></li>
+                        <li><a href="#">Add Targets</a></li>
+                        <li><a href="#">Target Group</a></li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="listTargets.html">
+                        <strong><i class="fa-solid fa-qrcode"></i> Scans</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <strong><i class="fa-solid fa-bug"></i> Reports</strong>
+                    </a>
+                </li>
+                <li>
+                    <strong><i class="fa-solid fa-user"></i> Users</strong>
+                    <ul>
+                        <li><a href="#">List User</a></li>
+                        <li><a href="#">Add User</a></li>
+                        <li><a href="#">Account Settings</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <header id="header">
+            <div class="mui-appbar mui--appbar-line-height mui-panel">
+                <div class="mui-container-fluid">
+                    <div class="mui-flexbox mui-between mui-align-center">
+                        <div>
+                            <a
+                                class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer dark">☰</a>
+                            <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer dark">☰</a>
+                            <span class="mui--text-title mui--text-dark">Scans</span>
+                        </div>
+                        <div>
+                            <div>
+                                <button class="mui-btn mui-btn--danger" title="Scan"><i class="fa-solid fa-qrcode"></i> New Scan</button>
+                                <button class="mui-btn mui-btn--raised" title="Stop Scan"><i class="fa-solid fa-stop"></i> Stop Scan</button>
+                                <button class="mui-btn mui-btn--raised" title="Delete Scan"><i class="fa-solid fa-trash"></i> Delete Scan</button>
+                                <div class="mui-dropdown">
+                                    <button class="mui-btn mui-btn--raised" data-mui-toggle="dropdown" title="Generate Report">
+                                        <i class="fa-solid fa-copy"></i> Generate Report
+                                        <span class="mui-caret"></span>
+                                    </button>
+                                    <ul class="mui-dropdown__menu">
+                                        <li><a href="#">Option 1</a></li>
+                                        <li><a href="#">Option 2</a></li>
+                                        <li><a href="#">Option 3</a></li>
+                                        <li><a href="#">Option 4</a></li>
+                                    </ul>
+                                </div>
+                                <button class="mui-btn mui-btn--raised" title="Compare Scans"><i class="fa-solid fa-code-compare"></i> Compare Scans</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="content-wrapper" class="wrapper-listTargets scroll-auto">
+            <div class="mui--appbar-height"></div>
+            <div class="mui-container-fluid">
+                <div class="filter mui-flexbox mui-between mui-align-center">
+                    <div class="input-filter">
+                        <span class=""><i class="fa-solid fa-filter"></i> Filter</span>
+                    </div>
+                    <div class="remove-all-filter">
+                        <i class="fa-solid fa-x"></i>
+                    </div>
+                    <ul class="select-filter mui-panel">
+                        <li>Business Criticality</li>
+                        <li>Target Group</li>
+                        <li>Scan Type</li>
+                        <li>Status</li>
+                        <li>Target</li>
+                        <li>Threat</li>
+                    </ul>
+                </div>
+                <div class="list-targets">
+                    <table class="mui-table mui-table--bordered">
+                        <thead>
+                          <tr>
+                            <th>
+                                <input type="checkbox" name="checkedAll" id="checkedAll">
+                            </th>
+                            <th>Target</th>
+                            <th>Scan Type</th>
+                            <th>Schedule</th>
+                            <th>Vulnerabilities</th>
+                            <th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                              <td>
+                                  <input type="checkbox" name="checkAll" class="checkSingle">
+                            </td>
+                            <td>
+                                <a href="information.html">http://testphp.vulnweb.com/</a>
+                            </td>
+                            <td>Full Scan</td>
+                            <td>Last run on Mar 7, 2022, 10:56:54 AM</td>
+                            <td>
+                                <span class="severity severity-high">17</span>
+                                <span class="severity severity-medium">4</span>
+                                <span class="severity severity-low">0</span>
+                                <span class="severity severity-info">0</span>
+                            </td>
+                            <td>
+                                <span class="status err2">Completed</span>
+                            </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <input type="checkbox" name="checkAll" class="checkSingle">
+                            </td>
+                            <td>
+                                <a href="">http://testphp.vulnweb.com/</a>
+                            </td>
+                            <td>Full Scan</td>
+                            <td>Last run on Mar 7, 2022, 10:56:54 AM</td>
+                            <td>
+                                <span class="severity severity-high">17</span>
+                                <span class="severity severity-medium">4</span>
+                                <span class="severity severity-low">0</span>
+                                <span class="severity severity-info">0</span>
+                            </td>
+                            <td>
+                                <span class="status err2">Completed</span>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div class="pagination-container">
+                          <div class="pagination-per-page">
+                            <span>Items per page: </span>
+                            <select>
+                                <option value="20">20</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                          </div>
+                          <div class="pagination-ranger-action">
+                              <div class="pagination-range-label">1 - 4 of 4</div>
+                              <a href=""><i class="fa-solid fa-angle-left"></i></a>
+                              <div class="mui-btn mui-btn--fab mui-btn--danger">1</div>
+                              <div class="mui-btn mui-btn--fab">2</div>
+                              <div class="mui-btn mui-btn--fab">3</div>
+                              <div class="mui-btn mui-btn--fab">4</div>
+                              <div class="mui-btn mui-btn--fab">5</div>
+                              <a href=""><i class="fa-solid fa-angle-right"></i></a>
+                          </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+        <div class="notification">
+            
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/muicss/0.10.3/js/mui.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

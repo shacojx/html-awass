@@ -1,0 +1,33 @@
+.wrapper-listTargets {
+  .list-targets {
+      margin-top: 20px;
+    a {
+      color: #000;
+    }
+  }
+  .pagination-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap-reverse;
+    width: 100%;
+    .pagination-range-label {
+      margin: 0 32px 0 24px;
+    }
+    .pagination-ranger-action {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      button {
+        border: none;
+        background-color: transparent;
+      }
+      .mui-btn--fab {
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        margin: 0;
+      }
+    }
+  }
+}
