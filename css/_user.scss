@@ -1,0 +1,21 @@
+.wrapper-users{
+    .true{
+        &::before{
+            content: "\f00c";
+            font-size: 20px;
+            color: #28a745;
+        }
+    }
+    .false{
+        &::before{
+            content: "\f00d";
+            font-size: 20px;
+            color: #f44336;
+        }
+    }
+    .btn-action{
+        margin: 0;
+        padding: 0 15px;
+    }
+    
+}

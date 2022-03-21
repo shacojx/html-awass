@@ -1,0 +1,21 @@
+.wrapper-newScan{
+    .mui-container-fluid{
+        background: transparent !important;
+    }
+    .add-form-container{
+        max-width: 900px;
+        margin: auto;
+        display: block;
+        padding: 30px;
+        background: #fff;
+        .target-form{
+            display: block;
+        }
+        .mui-textfield{
+            width: 45%;
+            margin-right: 25px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+    }
+}

@@ -1,21 +1,5 @@
-.mui-tabs__bar {
-  background-color: #eeeeee;
-  border-bottom: 1px solid #0000001f;
-  > li {
-    &.mui--is-active {
-      border-color: #e11f26;
-      > a {
-        color: #000;
-      }
-    }
-    a {
-      cursor: pointer;
-    }
-  }
-}
-.wrapper-information {
-  .mui-card {
-    height: 200px;
+.mui-card {
+    // height: 200px;
     &-header {
       border-bottom: 1px solid #ccc;
       padding-bottom: 10px;
@@ -46,15 +30,6 @@
       }
     }
   }
-  .progress-bar {
-    display: block;
-    height: 4px;
-    overflow: hidden;
-    position: relative;
-    transition: opacity 250ms linear;
-    width: 100%;
-    background-color: #e11f26;
-  }
   .stats {
     height: fit-content;
     &::before {
@@ -70,4 +45,3 @@
       font-size: 28px;
     }
   }
-}

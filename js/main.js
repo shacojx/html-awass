@@ -82,7 +82,12 @@ jQuery(function ($) {
         $(".notification").toggleClass("active");
       },
     };
-    // mui.overlay("on", options);
+    if ($(".notification").hasClass("active")) {
+      mui.overlay("on", options);
+    } else {
+      $(".notification").toggleClass("active");
+      mui.overlay("off");
+    }
   });
   //   $(".input-filter span").click(function(){
   //     const value = $(this).text();
@@ -93,4 +98,98 @@ jQuery(function ($) {
     $(".aside-wrapper li").removeClass("active");
     $(this).addClass("active");
   });
+
+  $(".detail-item").click(function () {
+    $(this).toggleClass("show");
+  });
+
+  $(".master-detail-panel .list-targets tbody tr").click(function () {
+    $(".master-detail-panel .wrapper-listTargets").addClass("w-50");
+    $(".master-detail-panel .wrapper-listTargets").removeClass("w-100");
+    $(".master-detail-panel .wrapper-detail").css("display", "block");
+  });
+  $(".cta-close").click(function () {
+    $(".wrapper-listTargets").addClass("w-100");
+    $(".wrapper-listTargets").removeClass("w-50");
+    $(".wrapper-detail").css("display", "none");
+  });
+  $(".group").click(function () {
+    let action = $(this).attr("aria-expanded");
+    if (action == "true") {
+      $(this).attr("aria-expanded", "false");
+    } else {
+      $(this).attr("aria-expanded", "true");
+    }
+  });
+  $('.path-action').click(function(){
+    $(this).parent().toggleClass('high');
+    if($(this).parent().hasClass('high')){
+      $(this).text('Include');
+    }
+    else{
+      $(this).text('Exclude');
+    }
+  })
 });
+
+var toggler = document.getElementsByClassName("caret");
+var i;
+
+for (i = 0; i < toggler.length; i++) {
+  toggler[i].addEventListener("click", function() {
+    this.parentElement.querySelector(".nested").classList.toggle("active");
+  });
+}
+
+var toggler = document.getElementsByClassName("path-action");
+var i;
+
+for (i = 0; i < toggler.length; i++) {
+  toggler[i].addEventListener("click", function() {
+    this.parentElement.parentElement.querySelector(".nested").classList.toggle("high");
+  });
+}
+
+const data = {
+  labels: [
+    'High',
+  ],
+  datasets: [{
+    label: 'My First Dataset',
+    data: [300],
+    backgroundColor: [
+      'rgb(255, 99, 132)',
+    ],
+    hoverOffset: 4
+  }]
+};
+
+const config = {
+  type: 'doughnut',
+  data: data,
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: 'Chart.js Doughnut Chart'
+      }
+    }
+  }
+};
+
+const myChart = new Chart(
+  document.getElementById('myChart'),
+  config
+);
+const myChart2 = new Chart(
+  document.getElementById('myChart2'),
+  config
+);
+const myChart3 = new Chart(
+  document.getElementById('myChart3'),
+  config
+);

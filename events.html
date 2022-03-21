@@ -55,7 +55,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="reports.html">
                         <strong><i class="fa-solid fa-bug"></i> Reports</strong>
                     </a>
                 </li>
@@ -126,144 +126,72 @@
                 </div>
             </div>
         </header>
-        <div id="content-wrapper" class="wrapper-information scroll-none">
+        <div id="content-wrapper" class="scroll-none">
             <div class="mui--appbar-height"></div>
             <ul class="mui-tabs__bar">
-                <li class="mui--is-active"><a href="information.html" data-mui-toggle="tab"
-                        data-mui-controls="pane-default-1">Scan
+                <li><a href="information.html" data-mui-toggle="tab" data-mui-controls="pane-default-1">Scan
                         Information</a></li>
                 <li><a href="vulnerabilities.html" data-mui-toggle="tab"
                         data-mui-controls="pane-default-2">Vulnerabilities</a></li>
                 <li><a href="siteStructure.html" data-mui-toggle="tab" data-mui-controls="pane-default-3">Site
                         Structure</a></li>
-                <li><a href="events.html" data-mui-toggle="tab" data-mui-controls="pane-default-4">Event</a></li>
+                <li class="mui--is-active"><a href="events.html" data-mui-toggle="tab"
+                        data-mui-controls="pane-default-4">Event</a></li>
             </ul>
-            <div class="mui-container-fluid mui-tabs__pane mui--is-active scroll-auto" id="pane-default-1">
-                <div class="mui-row">
-                    <div class="mui-col-md-6">
-                        <div class="mui-panel mui-card">
-                            <div class="mui-flexbox mui-align-center">
-                                <img src="images/level-high.png" alt="">
-                                <div class="content">
-                                    <div class="mui--text-headline">Acunetix Threat Level 3</div>
-                                    <div class="mui--text-body1">One or more high-severity type vulnerabilities have
-                                        been discovered by the scanner. A malicious user can exploit these
-                                        vulnerabilities and compromise the backend database and/or deface your website.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mui-col-md-6">
-                        <div class="mui-panel mui-card activity">
-                            <div class="mui-card-header mui-flexbox mui-between mui-align-center">
-                                <span class="mui-card-title">Activity</span>
-                                <span>Completed</span>
-                            </div>
-                            <div class="mui-card-body">
-                                <div class="mui-item mui-flexbox mui-between">
-                                    <span>Overall Progress</span>
-                                    <span>100%</span>
-                                </div>
-                                <div class="progress-bar"></div>
-                                <div class="mui-item mui-flexbox mui-between">
-                                    <span class="status err">Scanning of testphp.vulnweb.com started</span>
-                                    <span>Mar 7, 2022, 2:54:58 PM</span>
-                                </div>
-                                <div class="mui-item mui-flexbox mui-between">
-                                    <span class="status err2">Scanning of testphp.vulnweb.com started</span>
-                                    <span>Mar 7, 2022, 2:54:58 PM</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mui-row">
-                    <div class="mui-col-md-12">
-                        <div class="mui-panel mui-card mui-flexbox mui-around mui-align-center stats">
-                            <div class="stats-item text-center">
-                                <div class="stats-label">Scan Duration</div>
-                                <div class="stats-value">0m 56s</div>
-                            </div>
-                            <div class="stats-item text-center">
-                                <div class="stats-label">Requests</div>
-                                <div class="stats-value">1,046</div>
-                            </div>
-                            <div class="stats-item text-center">
-                                <div class="stats-label">Average Response Time</div>
-                                <div class="stats-value">191ms</div>
-                            </div>
-                            <div class="stats-item text-center">
-                                <div class="stats-label">Locations</div>
-                                <div class="stats-value">119</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mui-row">
-                    <div class="mui-col-md-6">
-                        <div class="mui-panel mui-card">
-                            <div class="mui-card-header mui-flexbox mui-between mui-align-center">
-                                <span class="mui-card-title">Target Information</span>
-                            </div>
-                            <div class="mui-card-body">
-                                <div class="mui-item mui-flexbox mui-between">
-                                    <span>Address</span>
-                                    <a href="#">http://testphp.vulnweb.com/</a>
-                                </div>
-                                <div class="mui-item mui-flexbox mui-between">
-                                    <span>Server</span>
-                                    <span>nginx/1.19.0</span>
-                                </div>
-                                <div class="mui-item mui-flexbox mui-between">
-                                    <span>Operating System</span>
-                                    <span>Unknown</span>
-                                </div>
-                                <div class="mui-item mui-flexbox mui-between">
-                                    <span>Identified Technologies</span>
-                                    <span>PHP</span>
-                                </div>
-                                <div class="mui-item mui-flexbox mui-between">
-                                    <span>Responsive</span>
-                                    <span>Yes</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mui-col-md-6">
-                        <div class="mui-panel mui-card">
-                            <div class="mui-card-header mui-flexbox mui-between mui-align-center">
-                                <span class="mui-card-title">Latest Alerts</span>
-                                <div class="mui-flex star-inserted">
-                                    <span class="severity severity-high">17</span>
-                                    <span class="severity severity-medium">4</span>
-                                    <span class="severity severity-low">0</span>
-                                    <span class="severity severity-info">0</span>
-                                </div>
-                            </div>
-                            <div class="mui-card-body">
-                                <div class="mui-item mui-flexbox mui-between">
-                                    <a href="#" class="status bug">Cross site scripting</a>
-                                    <span>Mar 7, 2022, 2:55:17 PM</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mui-row">
-                    <div class="mui-col-md-6">
-                        <div class="mui-panel mui-card">
-                            <div class="mui-card-header mui-flexbox mui-between mui-align-center">
-                                <span class="mui-card-title">Discovered Hosts <span class="amount">(1)</span></span>
-                            </div>
-                            <div class="mui-card-body">
-                                <div class="mui-item mui-flexbox mui-between">
-                                    <span>https://www.acunetix.com</span>
-                                    <a href="#">Create Target</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="mui-container-fluid mui-tabs__pane mui--is-active scroll-auto" id="pane-default-3">
+                <div class="list-targets">
+                    <table class="mui-table mui-table--bordered">
+                        <thead>
+                            <tr>
+                                <th>Event</th>
+                                <th>Created</th>
+                                <th>Additional Information</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Scan Job Starting</td>
+                                <td>Mar 7, 2022, 2:54:55 PM</td>
+                                <td>
+                                    <pre>
+{
+    "status": "starting",
+    "worker_id": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+    "scanning_app": "wvs",
+    "extended_status": null
+}
+                                    </pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Event</th>
+                                <th>Created</th>
+                                <th>Additional Information</th>
+                            </tr>
+                            </thead>
+                        <tbody>
+                            <tr>
+                                <td>Scan Job Starting</td>
+                                <td>Mar 7, 2022, 2:54:55 PM</td>
+                                <td>
+                                    <pre>
+{
+    "status": "finished",
+    "scanning_app": "wvs",
+    "extended_status": {
+        "attachments": [
+            {
+                "url": "file:///home/acunetix/.acunetix/data/scans/f2e15367-0a9d-462a-8672-20b0b9f4d19c.zip",
+                "name": "output"
+            }
+        ]
+    }
+}
+                                    </pre>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

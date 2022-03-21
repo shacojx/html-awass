@@ -1,0 +1,19 @@
+.dropdown{
+    right: 100%;
+    top: 0;
+}
+.hover:hover{
+    .dropdown{
+        display: block;
+    }
+}
+.wrapper-reports{
+    .list-targets{
+        .mui-btn.download{
+            background-color: #888;
+            color: #fff;
+            margin: 0;
+            padding: 0 5px;
+        }
+    }
+}

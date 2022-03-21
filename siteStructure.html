@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Infosec</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/muicss/0.10.3/css/mui.min.css" rel="stylesheet"
+        type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="main">
+        <div class="header-top mui-flexbox mui-align-center mui-flex-end">
+            <div class="header-right">
+                <div class="mui-dropdown">
+                    <button class="mui-btn mui-dropdown-btn" data-mui-toggle="dropdown">
+                        Administrator
+                        <span class="mui-caret"></span>
+                    </button>
+                    <ul class="mui-dropdown__menu">
+                        <li><a href="#"><i class="fa-solid fa-address-card"></i> Profile</a></li>
+                        <li><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a></li>
+                    </ul>
+                </div>
+                <button class="mui-btn notifi">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="noti-number">15</span>
+                </button>
+            </div>
+        </div>
+        <div id="sidedrawer" class="mui--no-user-select">
+            <div class="mui-divider"></div>
+            <ul class="aside-wrapper">
+                <li>
+                    <a href="dashboard.html">
+                        <strong><i class="fa-solid fa-chart-line"></i> Dashboard</strong>
+                    </a>
+                </li>
+                <li>
+                    <strong><i class="fa-solid fa-bullseye"></i> Targets</strong>
+                    <ul>
+                        <li><a href="listTargets.html">List Target</a></li>
+                        <li><a href="newScan.html">Add Target</a></li>
+                        <li><a href="#">Add Targets</a></li>
+                        <li><a href="#">Target Group</a></li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="listTargets.html">
+                        <strong><i class="fa-solid fa-qrcode"></i> Scans</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="reports.html">
+                        <strong><i class="fa-solid fa-bug"></i> Reports</strong>
+                    </a>
+                </li>
+                <li>
+                    <strong><i class="fa-solid fa-user"></i> Users</strong>
+                    <ul>
+                        <li><a href="user.html">List User</a></li>
+                        <li><a href="addUser.html">Add User</a></li>
+                        <li><a href="#">Account Settings</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <header id="header">
+            <div class="mui-appbar mui--appbar-line-height mui-panel">
+                <div class="mui-container-fluid">
+                    <div class="mui-flexbox mui-between mui-align-center">
+                        <div>
+                            <a
+                                class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer dark">☰</a>
+                            <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer dark">☰</a>
+                            <span class="mui--text-title mui--text-dark">Scan</span>
+                        </div>
+                        <div>
+                            <button class="mui-btn mui-btn--raised" title="Stop Scan"><i class="fa-solid fa-stop"></i>
+                                Stop Scan</button>
+                            <button class="mui-btn mui-btn--raised" title="Pause Scan"><i class="fa-solid fa-pause"></i>
+                                Pause Scan</button>
+                            <div class="mui-dropdown">
+                                <button class="mui-btn mui-btn--raised" data-mui-toggle="dropdown"
+                                    title="Generate Report">
+                                    <i class="fa-solid fa-copy"></i> Generate Report
+                                    <span class="mui-caret"></span>
+                                </button>
+                                <ul class="mui-dropdown__menu mui-dropdown__menu--right">
+                                    <li class="menu-section">Standard Reports</li>
+                                    <li><a href="#">Affected Items</a></li>
+                                    <li><a href="#">Developer</a></li>
+                                    <li><a href="#">Executive Summary</a></li>
+                                    <li><a href="#">Quick</a></li>
+                                    <li class="menu-section">Compliance Reports</li>
+                                    <li><a href="#">CWE 2011</a></li>
+                                    <li><a href="#">HIPAA</a></li>
+                                    <li><a href="#">ISO 27001</a></li>
+                                    <li><a href="#">NIST SP800 53</a></li>
+                                    <li><a href="#">OWASP Top 10 2013</a></li>
+                                    <li><a href="#">OWASP Top 10 2017</a></li>
+                                    <li><a href="#">PCI DSS 3.2</a></li>
+                                    <li><a href="#">Sarbanes Oxley</a></li>
+                                    <li><a href="#">STIG DISA</a></li>
+                                    <li><a href="#">WASC Threat Classification</a></li>
+                                </ul>
+                            </div>
+                            <div class="mui-dropdown">
+                                <button class="mui-btn mui-btn--raised" data-mui-toggle="dropdown" title="WAF Export">
+                                    <i class="fa-solid fa-file-export"></i> WAF Export
+                                    <span class="mui-caret"></span>
+                                </button>
+                                <ul class="mui-dropdown__menu mui-dropdown__menu--right">
+                                    <li><a href="#">XML</a></li>
+                                    <li><a href="#">Imperva SecureSphere WAF</a></li>
+                                    <li><a href="#">F5 BIG-IP ASM</a></li>
+                                    <li><a href="#">Fortinet FortiWeb</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="content-wrapper" class="wrapper-structure scroll-none">
+            <div class="mui--appbar-height"></div>
+            <ul class="mui-tabs__bar">
+                <li><a href="information.html" data-mui-toggle="tab" data-mui-controls="pane-default-1">Scan
+                        Information</a></li>
+                <li><a href="vulnerabilities.html" data-mui-toggle="tab" data-mui-controls="pane-default-2">Vulnerabilities</a></li>
+                <li class="mui--is-active"><a href="siteStructure.html" data-mui-toggle="tab" data-mui-controls="pane-default-3">Site
+                        Structure</a></li>
+                <li><a href="events.html" data-mui-toggle="tab" data-mui-controls="pane-default-4">Event</a></li>
+            </ul>
+            <div class="mui-container-fluid mui-tabs__pane mui--is-active scroll-none" id="pane-default-3">
+                <div class="breadcrumbs-container">
+                    <div class="breadcrumbs mui-flexbox mui-align-center">
+                        <div class="breadcrumb mui-flexbox mui-center active">
+                            <span class="breadcrumb-content">http://testphp.vulnweb.com/</span>
+                        </div>
+                        <div class="breadcrumb mui-flexbox mui-center">
+                            <span class="breadcrumb-content">highline</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mui-divider"></div>
+                <div class="sub-master-detail-panel mui-flexbox">
+                    <div class="panel-folder">
+                        <div class="item lev1">
+                            <div class="group mui-flexbox mui-between caret" aria-expanded="false">
+                                <div class="status icon">http://testphp.vulnweb.com/</div>
+                                <div class="path-action">Exclude</div>
+                            </div>
+                            <div class="lev2 nested">
+                                <div class="item">
+                                    <div class="group mui-flexbox mui-between caret" style="padding-left: 15px;" aria-expanded="false">
+                                        <div class="status icon">folder1</div>
+                                        <div class="path-action">Exclude</div>
+                                    </div>
+                                    <div class="lev3 nested">
+                                        <div class="item">
+                                            <div class="file mui-flexbox mui-between" style="padding-left: 30px;">
+                                                <div class="status icon">file1</div>
+                                                <div class="path-action">Exclude</div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="file mui-flexbox mui-between" style="padding-left: 30px;">
+                                                <div class="status icon">file2</div>
+                                                <div class="path-action">Exclude</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="group mui-flexbox mui-between caret" style="padding-left: 15px;" aria-expanded="false">
+                                        <div class="status icon">folder2</div>
+                                        <div class="path-action">Exclude</div>
+                                    </div>
+                                    <div class="lev3 nested">
+                                        <div class="item">
+                                            <div class="file mui-flexbox mui-between" style="padding-left: 30px;">
+                                                <div class="status icon">file1</div>
+                                                <div class="path-action">Exclude</div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="file mui-flexbox mui-between" style="padding-left: 30px;">
+                                                <div class="status icon">file2</div>
+                                                <div class="path-action">Exclude</div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="group mui-flexbox mui-between caret" style="padding-left: 30px;" aria-expanded="false">
+                                                <div class="status icon">folder4</div>
+                                                <div class="path-action">Exclude</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="file mui-flexbox mui-between" style="padding-left: 15px;">
+                                        <div class="status icon">file1</div>
+                                        <div class="path-action">Exclude</div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="file mui-flexbox mui-between" style="padding-left: 15px;">
+                                        <div class="status icon">file2</div>
+                                        <div class="path-action">Exclude</div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="file mui-flexbox mui-between" style="padding-left: 15px;">
+                                        <div class="status icon">file3</div>
+                                        <div class="path-action">Exclude</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="master-detail-panel panel-detail mui-flexbox">
+                        <div class="w-50 wrapper-listTargets">
+                            <div class="location-info mui-flexbox">
+                                <div class="url-container mui-flexbox mui-between mui-align-center">
+                                    <span class="url">http://testphp.vulnweb.com/</span>
+                                    <div class="btn-copy" title="copy URL to Clipboard"><i class="fa-solid fa-copy"></i></div>
+                                </div>
+                                <div class="count">
+                                    <span class="severity severity-high">17</span>
+                                    <span class="severity severity-medium">4</span>
+                                    <span class="severity severity-low">0</span>
+                                    <span class="severity severity-info">0</span>
+                                </div>
+                            </div>
+                            <div class="list-targets">
+                                <table class="mui-table mui-table--bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Severity</th>
+                                            <th>Vulnerability</th>
+                                            <th>Parameter</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="status bug high"></span></td>
+                                            <td>PHP allow_url_fopen enabled </td>
+                                            <td></td>
+                                            <td>
+                                                Open
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="status bug medium"></span></td>
+                                            <td>PHP allow_url_fopen enabled </td>
+                                            <td></td>
+                                            <td>
+                                                Open
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="status bug info"></span></td>
+                                            <td>PHP allow_url_fopen enabled </td>
+                                            <td></td>
+                                            <td>
+                                                Open
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="status bug low"></span></td>
+                                            <td>PHP allow_url_fopen enabled </td>
+                                            <td></td>
+                                            <td>
+                                                Open
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="pagination-container">
+                                    <div class="pagination-per-page">
+                                        <span>Items per page: </span>
+                                        <select>
+                                            <option value="20">20</option>
+                                            <option value="50">50</option>
+                                            <option value="100">100</option>
+                                        </select>
+                                    </div>
+                                    <div class="pagination-ranger-action">
+                                        <div class="pagination-range-label">1 - 4 of 4</div>
+                                        <a href=""><i class="fa-solid fa-angle-left"></i></a>
+                                        <div class="mui-btn mui-btn--fab mui-btn--danger">1</div>
+                                        <div class="mui-btn mui-btn--fab">2</div>
+                                        <div class="mui-btn mui-btn--fab">3</div>
+                                        <div class="mui-btn mui-btn--fab">4</div>
+                                        <div class="mui-btn mui-btn--fab">5</div>
+                                        <a href=""><i class="fa-solid fa-angle-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-50 wrapper-vulnerabilities">
+                            <div class="wrapper-detail">
+                                <div class="cta-detail mui-flexbox">
+                                    <div class="mui-dropdown">
+                                        <button class="mui-btn mui-btn--raised" data-mui-toggle="dropdown">
+                                            <i class="fa-solid fa-check"></i> Mark as
+                                            <span class="mui-caret"></span>
+                                        </button>
+                                        <ul class="mui-dropdown__menu">
+                                            <li><a href="#">Open</a></li>
+                                            <li><a href="#">Fixed</a></li>
+                                            <li><a href="#">Ignored</a></li>
+                                            <li><a href="#">False Positive</a></li>
+                                        </ul>
+                                    </div>
+                                    <button class="mui-btn mui-btn--raised"><i class="fa-solid fa-rotate-left"></i>
+                                        Retest</button>
+                                    <button class="cta-close"><i class="fa-solid fa-x"></i></button>
+                                </div>
+                                <div class="detail-container">
+                                    <h2>Cross site scripting</h2>
+                                    <div class="detail-item">
+                                        <div class="title-detail mui-flexbox mui-align-center">
+                                            <h4 class="title-detail">Vulnerability Description</h4>
+                                            <i class="icon-show"></i>
+                                        </div>
+                                        <div class="content-detail">
+                                            <p>Cross-site Scripting (XSS) <strong> refers to client-side </strong> code
+                                                injection
+                                                attack wherein an attacker can execute malicious scripts into a
+                                                legitimate website
+                                                or web application. XSS occurs when a web application makes use of
+                                                unvalidated or
+                                                unencoded user input within the output it generates.</p>
+                                            <p>Cross-site Scripting (XSS) refers to client-side code injection attack
+                                                wherein an
+                                                attacker can execute malicious scripts into a legitimate website or web
+                                                application.
+                                                XSS occurs when a web application makes use of unvalidated or unencoded
+                                                user input
+                                                within the output it generates.</p>
+                                        </div>
+                                    </div>
+                                    <div class="detail-item">
+                                        <div class="title-detail mui-flexbox mui-align-center">
+                                            <h4 class="title-detail">Vulnerability Description</h4>
+                                            <i class="icon-show"></i>
+                                        </div>
+                                        <div class="content-detail">
+                                            <p>Cross-site Scripting (XSS) refers to client-side code injection attack
+                                                wherein an
+                                                attacker can execute malicious scripts into a legitimate website or web
+                                                application.
+                                                XSS occurs when a web application makes use of unvalidated or unencoded
+                                                user input
+                                                within the output it generates.</p>
+                                            <p>Cross-site Scripting (XSS) refers to client-side code injection attack
+                                                wherein an
+                                                attacker can execute malicious scripts into a legitimate website or web
+                                                application.
+                                                XSS occurs when a web application makes use of unvalidated or unencoded
+                                                user input
+                                                within the output it generates.</p>
+                                        </div>
+                                    </div>
+                                    <div class="detail-item active">
+                                        <div class="title-detail mui-flexbox mui-align-center">
+                                            <h4 class="title-detail">Vulnerability Description</h4>
+                                            <i class="icon-show"></i>
+                                        </div>
+                                        <div class="content-detail">
+                                            <p>Cross-site Scripting (XSS) refers to client-side code injection attack
+                                                wherein an
+                                                attacker can execute malicious scripts into a legitimate website or web
+                                                application.
+                                                XSS occurs when a web application makes use of unvalidated or unencoded
+                                                user input
+                                                within the output it generates.</p>
+                                            <p>Cross-site Scripting (XSS) refers to client-side code injection attack
+                                                wherein an
+                                                attacker can execute malicious scripts into a legitimate website or web
+                                                application.
+                                                XSS occurs when a web application makes use of unvalidated or unencoded
+                                                user input
+                                                within the output it generates.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="notification">
+            <div class="notify-item">
+                <p class="high">Report Created</p>
+                <p>Mar 7, 2022, 3:27:05 PM</p>
+            </div>
+            <div class="notify-item">
+                <p><span class="high">Scan done</span> for https://abcd.com/</p>
+                <p>Mar 7, 2022, 3:27:05 PM</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/muicss/0.10.3/js/mui.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

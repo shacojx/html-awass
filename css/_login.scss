@@ -1,0 +1,43 @@
+.wrapper-login {
+  width: 450px;
+  background: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 1px -1px #00000003, 0 1px 1px 0 #00000003,
+    0 1px 3px 0 #0000001a;
+  .wrap-header {
+    text-transform: uppercase;
+    padding: 10px 0;
+  }
+  .wrap-title {
+    margin: 20px 0 30px;
+    padding: 0 30px;
+  }
+  .login-form {
+    padding: 0 30px;
+    margin-bottom: 15px;
+    .mui-textfield {
+      input {
+        font-size: 15px;
+      }
+    }
+    .btn-login {
+      background-color: #000;
+      color: #fff;
+    }
+  }
+  .wrap-footer {
+    background-color: #626262;
+    padding: 6px 10px;
+    color: #e6e5e5;
+    font-size: 12px;
+  }
+}
+// .mui-textfield > input:invalid:required.mui--is-empty.mui--is-touched{
+//     border-color: #000;
+// }
+// .mui-textfield > input:invalid:required.mui--is-empty.mui--is-touched{
+//     color: #000;
+// }

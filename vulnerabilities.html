@@ -55,7 +55,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="reports.html">
                         <strong><i class="fa-solid fa-bug"></i> Reports</strong>
                     </a>
                 </li>
@@ -126,141 +126,149 @@
                 </div>
             </div>
         </header>
-        <div id="content-wrapper" class="wrapper-information scroll-none">
+        <div id="content-wrapper" class="wrapper-vulnerabilities scroll-none">
             <div class="mui--appbar-height"></div>
             <ul class="mui-tabs__bar">
-                <li class="mui--is-active"><a href="information.html" data-mui-toggle="tab"
-                        data-mui-controls="pane-default-1">Scan
+                <li><a href="information.html" data-mui-toggle="tab" data-mui-controls="pane-default-1">Scan
                         Information</a></li>
-                <li><a href="vulnerabilities.html" data-mui-toggle="tab"
+                <li class="mui--is-active"><a href="vulnerabilities.html" data-mui-toggle="tab"
                         data-mui-controls="pane-default-2">Vulnerabilities</a></li>
                 <li><a href="siteStructure.html" data-mui-toggle="tab" data-mui-controls="pane-default-3">Site
                         Structure</a></li>
                 <li><a href="events.html" data-mui-toggle="tab" data-mui-controls="pane-default-4">Event</a></li>
             </ul>
-            <div class="mui-container-fluid mui-tabs__pane mui--is-active scroll-auto" id="pane-default-1">
-                <div class="mui-row">
-                    <div class="mui-col-md-6">
-                        <div class="mui-panel mui-card">
-                            <div class="mui-flexbox mui-align-center">
-                                <img src="images/level-high.png" alt="">
-                                <div class="content">
-                                    <div class="mui--text-headline">Acunetix Threat Level 3</div>
-                                    <div class="mui--text-body1">One or more high-severity type vulnerabilities have
-                                        been discovered by the scanner. A malicious user can exploit these
-                                        vulnerabilities and compromise the backend database and/or deface your website.
-                                    </div>
-                                </div>
-                            </div>
+            <div class="mui-container-fluid mui-tabs__pane mui--is-active mui-flexbox master-detail-panel scroll-auto" id="pane-default-2">
+                <div class="wrapper-listTargets w-100">
+                    <div class="filter mui-flexbox mui-between mui-align-center">
+                        <div class="input-filter">
+                            <span class=""><i class="fa-solid fa-filter"></i> Filter</span>
                         </div>
-                    </div>
-                    <div class="mui-col-md-6">
-                        <div class="mui-panel mui-card activity">
-                            <div class="mui-card-header mui-flexbox mui-between mui-align-center">
-                                <span class="mui-card-title">Activity</span>
-                                <span>Completed</span>
-                            </div>
-                            <div class="mui-card-body">
-                                <div class="mui-item mui-flexbox mui-between">
-                                    <span>Overall Progress</span>
-                                    <span>100%</span>
-                                </div>
-                                <div class="progress-bar"></div>
-                                <div class="mui-item mui-flexbox mui-between">
-                                    <span class="status err">Scanning of testphp.vulnweb.com started</span>
-                                    <span>Mar 7, 2022, 2:54:58 PM</span>
-                                </div>
-                                <div class="mui-item mui-flexbox mui-between">
-                                    <span class="status err2">Scanning of testphp.vulnweb.com started</span>
-                                    <span>Mar 7, 2022, 2:54:58 PM</span>
-                                </div>
-                            </div>
+                        <div class="remove-all-filter">
+                            <i class="fa-solid fa-x"></i>
                         </div>
+                        <ul class="select-filter mui-panel">
+                            <li>Business Criticality</li>
+                            <li>Target Group</li>
+                            <li>Scan Type</li>
+                            <li>Status</li>
+                            <li>Target</li>
+                            <li>Threat</li>
+                        </ul>
                     </div>
-                </div>
-                <div class="mui-row">
-                    <div class="mui-col-md-12">
-                        <div class="mui-panel mui-card mui-flexbox mui-around mui-align-center stats">
-                            <div class="stats-item text-center">
-                                <div class="stats-label">Scan Duration</div>
-                                <div class="stats-value">0m 56s</div>
+                    <div class="list-targets">
+                        <table class="mui-table mui-table--bordered">
+                            <thead>
+                                <tr>
+                                    <th>Severity</th>
+                                    <th>Vulnerability</th>
+                                    <th>URL</th>
+                                    <th>Parameter</th>
+                                    <th>Status</th>
+                                    <th>Confidence %</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="status bug high"></div>
+                                    </td>
+                                    <td>
+                                        Cross site scripting
+                                    </td>
+                                    <td>http://testphp.vulnweb.com/listproducts.php</td>
+                                    <td>cat</td>
+                                    <td>Open</td>
+                                    <td>100</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="pagination-container">
+                            <div class="pagination-per-page">
+                                <span>Items per page: </span>
+                                <select>
+                                    <option value="20">20</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </select>
                             </div>
-                            <div class="stats-item text-center">
-                                <div class="stats-label">Requests</div>
-                                <div class="stats-value">1,046</div>
-                            </div>
-                            <div class="stats-item text-center">
-                                <div class="stats-label">Average Response Time</div>
-                                <div class="stats-value">191ms</div>
-                            </div>
-                            <div class="stats-item text-center">
-                                <div class="stats-label">Locations</div>
-                                <div class="stats-value">119</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mui-row">
-                    <div class="mui-col-md-6">
-                        <div class="mui-panel mui-card">
-                            <div class="mui-card-header mui-flexbox mui-between mui-align-center">
-                                <span class="mui-card-title">Target Information</span>
-                            </div>
-                            <div class="mui-card-body">
-                                <div class="mui-item mui-flexbox mui-between">
-                                    <span>Address</span>
-                                    <a href="#">http://testphp.vulnweb.com/</a>
-                                </div>
-                                <div class="mui-item mui-flexbox mui-between">
-                                    <span>Server</span>
-                                    <span>nginx/1.19.0</span>
-                                </div>
-                                <div class="mui-item mui-flexbox mui-between">
-                                    <span>Operating System</span>
-                                    <span>Unknown</span>
-                                </div>
-                                <div class="mui-item mui-flexbox mui-between">
-                                    <span>Identified Technologies</span>
-                                    <span>PHP</span>
-                                </div>
-                                <div class="mui-item mui-flexbox mui-between">
-                                    <span>Responsive</span>
-                                    <span>Yes</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mui-col-md-6">
-                        <div class="mui-panel mui-card">
-                            <div class="mui-card-header mui-flexbox mui-between mui-align-center">
-                                <span class="mui-card-title">Latest Alerts</span>
-                                <div class="mui-flex star-inserted">
-                                    <span class="severity severity-high">17</span>
-                                    <span class="severity severity-medium">4</span>
-                                    <span class="severity severity-low">0</span>
-                                    <span class="severity severity-info">0</span>
-                                </div>
-                            </div>
-                            <div class="mui-card-body">
-                                <div class="mui-item mui-flexbox mui-between">
-                                    <a href="#" class="status bug">Cross site scripting</a>
-                                    <span>Mar 7, 2022, 2:55:17 PM</a>
-                                </div>
+                            <div class="pagination-ranger-action">
+                                <div class="pagination-range-label">1 - 4 of 4</div>
+                                <a href=""><i class="fa-solid fa-angle-left"></i></a>
+                                <div class="mui-btn mui-btn--fab mui-btn--danger">1</div>
+                                <div class="mui-btn mui-btn--fab">2</div>
+                                <div class="mui-btn mui-btn--fab">3</div>
+                                <div class="mui-btn mui-btn--fab">4</div>
+                                <div class="mui-btn mui-btn--fab">5</div>
+                                <a href=""><i class="fa-solid fa-angle-right"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="mui-row">
-                    <div class="mui-col-md-6">
-                        <div class="mui-panel mui-card">
-                            <div class="mui-card-header mui-flexbox mui-between mui-align-center">
-                                <span class="mui-card-title">Discovered Hosts <span class="amount">(1)</span></span>
+                <div class="wrapper-detail w-50">
+                    <div class="cta-detail mui-flexbox">
+                        <div class="mui-dropdown">
+                            <button class="mui-btn mui-btn--raised" data-mui-toggle="dropdown">
+                                <i class="fa-solid fa-check"></i> Mark as
+                                <span class="mui-caret"></span>
+                            </button>
+                            <ul class="mui-dropdown__menu">
+                                <li><a href="#">Open</a></li>
+                                <li><a href="#">Fixed</a></li>
+                                <li><a href="#">Ignored</a></li>
+                                <li><a href="#">False Positive</a></li>
+                            </ul>
+                        </div>
+                        <button class="mui-btn mui-btn--raised"><i class="fa-solid fa-rotate-left"></i> Retest</button>
+                        <button class="cta-close"><i class="fa-solid fa-x"></i></button>
+                    </div>
+                    <div class="detail-container">
+                        <h2>Cross site scripting</h2>
+                        <div class="detail-item">
+                            <div class="title-detail mui-flexbox mui-align-center">
+                                <h4 class="title-detail">Vulnerability Description</h4>
+                                <i class="icon-show"></i>
                             </div>
-                            <div class="mui-card-body">
-                                <div class="mui-item mui-flexbox mui-between">
-                                    <span>https://www.acunetix.com</span>
-                                    <a href="#">Create Target</a>
-                                </div>
+                            <div class="content-detail">
+                                <p>Cross-site Scripting (XSS) <strong> refers to client-side </strong> code injection
+                                    attack wherein an attacker can execute malicious scripts into a legitimate website
+                                    or web application. XSS occurs when a web application makes use of unvalidated or
+                                    unencoded user input within the output it generates.</p>
+                                <p>Cross-site Scripting (XSS) refers to client-side code injection attack wherein an
+                                    attacker can execute malicious scripts into a legitimate website or web application.
+                                    XSS occurs when a web application makes use of unvalidated or unencoded user input
+                                    within the output it generates.</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="title-detail mui-flexbox mui-align-center">
+                                <h4 class="title-detail">Vulnerability Description</h4>
+                                <i class="icon-show"></i>
+                            </div>
+                            <div class="content-detail">
+                                <p>Cross-site Scripting (XSS) refers to client-side code injection attack wherein an
+                                    attacker can execute malicious scripts into a legitimate website or web application.
+                                    XSS occurs when a web application makes use of unvalidated or unencoded user input
+                                    within the output it generates.</p>
+                                <p>Cross-site Scripting (XSS) refers to client-side code injection attack wherein an
+                                    attacker can execute malicious scripts into a legitimate website or web application.
+                                    XSS occurs when a web application makes use of unvalidated or unencoded user input
+                                    within the output it generates.</p>
+                            </div>
+                        </div>
+                        <div class="detail-item active">
+                            <div class="title-detail mui-flexbox mui-align-center">
+                                <h4 class="title-detail">Vulnerability Description</h4>
+                                <i class="icon-show"></i>
+                            </div>
+                            <div class="content-detail">
+                                <p>Cross-site Scripting (XSS) refers to client-side code injection attack wherein an
+                                    attacker can execute malicious scripts into a legitimate website or web application.
+                                    XSS occurs when a web application makes use of unvalidated or unencoded user input
+                                    within the output it generates.</p>
+                                <p>Cross-site Scripting (XSS) refers to client-side code injection attack wherein an
+                                    attacker can execute malicious scripts into a legitimate website or web application.
+                                    XSS occurs when a web application makes use of unvalidated or unencoded user input
+                                    within the output it generates.</p>
                             </div>
                         </div>
                     </div>

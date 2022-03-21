@@ -43,18 +43,18 @@
                 <li>
                     <strong><i class="fa-solid fa-bullseye"></i> Targets</strong>
                     <ul>
-                        <li><a href="#">List Target</a></li>
-                        <li><a href="#">Add Target</a></li>
+                        <li><a href="listTargets.html">List Target</a></li>
+                        <li><a href="newScan.html">Add Target</a></li>
                         <li><a href="#">Add Targets</a></li>
                         <li><a href="#">Target Group</a></li>
                     </ul>
                 </li>
-                <li class="active">
+                <li>
                     <a href="listTargets.html">
                         <strong><i class="fa-solid fa-qrcode"></i> Scans</strong>
                     </a>
                 </li>
-                <li>
+                <li class="active">
                     <a href="reports.html">
                         <strong><i class="fa-solid fa-bug"></i> Reports</strong>
                     </a>
@@ -77,50 +77,51 @@
                             <a
                                 class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer dark">☰</a>
                             <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer dark">☰</a>
-                            <span class="mui--text-title mui--text-dark">Scans</span>
+                            <span class="mui--text-title mui--text-dark">Reports</span>
                         </div>
                         <div>
                             <div>
-                                <button class="mui-btn mui-btn--danger" title="Scan"><i class="fa-solid fa-qrcode"></i>
-                                    New Scan</button>
-                                <button class="mui-btn mui-btn--raised" title="Stop Scan"><i
-                                        class="fa-solid fa-stop"></i> Stop Scans</button>
-                                <button class="mui-btn mui-btn--raised" title="Delete Scan"><i
-                                        class="fa-solid fa-trash"></i> Delete Scan</button>
                                 <div class="mui-dropdown">
                                     <button class="mui-btn mui-btn--raised" data-mui-toggle="dropdown"
                                         title="Generate Report">
-                                        <i class="fa-solid fa-copy"></i> Generate Report
+                                        <i class="fa-solid fa-copy"></i> New Report
                                         <span class="mui-caret"></span>
                                     </button>
                                     <ul class="mui-dropdown__menu mui-dropdown__menu--right">
-                                        <li class="menu-section">Standard Reports</li>
-                                        <li><a href="#">Affected Items</a></li>
-                                        <li><a href="#">Developer</a></li>
-                                        <li><a href="#">Executive Summary</a></li>
-                                        <li><a href="#">Quick</a></li>
-                                        <li class="menu-section">Compliance Reports</li>
-                                        <li><a href="#">CWE 2011</a></li>
-                                        <li><a href="#">HIPAA</a></li>
-                                        <li><a href="#">ISO 27001</a></li>
-                                        <li><a href="#">NIST SP800 53</a></li>
-                                        <li><a href="#">OWASP Top 10 2013</a></li>
-                                        <li><a href="#">OWASP Top 10 2017</a></li>
-                                        <li><a href="#">PCI DSS 3.2</a></li>
-                                        <li><a href="#">Sarbanes Oxley</a></li>
-                                        <li><a href="#">STIG DISA</a></li>
-                                        <li><a href="#">WASC Threat Classification</a></li>
+                                        <li class="hover">
+                                            <a href="#">All Vulnerabilities<i class="fa-solid fa-caret-right"></i></a>
+                                            <ul class="mui-dropdown__menu dropdown">
+                                                <li class="menu-section">Standard Reports</li>
+                                                <li><a href="#">Affected Items</a></li>
+                                                <li><a href="#">Developer</a></li>
+                                                <li><a href="#">Executive Summary</a></li>
+                                                <li><a href="#">Quick</a></li>
+                                                <li class="menu-section">Compliance Reports</li>
+                                                <li><a href="#">CWE 2011</a></li>
+                                                <li><a href="#">HIPAA</a></li>
+                                                <li><a href="#">ISO 27001</a></li>
+                                                <li><a href="#">NIST SP800 53</a></li>
+                                                <li><a href="#">OWASP Top 10 2013</a></li>
+                                                <li><a href="#">OWASP Top 10 2017</a></li>
+                                                <li><a href="#">PCI DSS 3.2</a></li>
+                                                <li><a href="#">Sarbanes Oxley</a></li>
+                                                <li><a href="#">STIG DISA</a></li>
+                                                <li><a href="#">WASC Threat Classification</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Scan Report</a></li>
+                                        <li><a href="#">Target Report</a></li>
                                     </ul>
                                 </div>
-                                <button class="mui-btn mui-btn--raised" title="Compare Scans"><i
-                                        class="fa-solid fa-code-compare"></i> Compare Scans</button>
+                                <button class="mui-btn mui-btn--raised" title="Delete Scan"><i
+                                        class="fa-solid fa-trash"></i> Delete</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
-        <div id="content-wrapper" class="wrapper-listTargets scroll-auto">
+        <div id="content-wrapper" class="wrapper-listTargets wrapper-reports scroll-auto">
             <div class="mui--appbar-height"></div>
             <div class="mui-container-fluid">
                 <div class="filter mui-flexbox mui-between mui-align-center">
@@ -146,11 +147,13 @@
                                 <th>
                                     <input type="checkbox" name="checkedAll" id="checkedAll">
                                 </th>
+                                <th>Report Template</th>
+                                <th>Report Type</th>
                                 <th>Target</th>
-                                <th>Scan Type</th>
-                                <th>Schedule</th>
-                                <th>Vulnerabilities</th>
+                                <th>Created On</th>
                                 <th>Status</th>
+                                <th>Download</th>
+                                <th>Delete</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -159,18 +162,22 @@
                                     <input type="checkbox" name="checkAll" class="checkSingle">
                                 </td>
                                 <td>
-                                    <a href="information.html">http://testphp.vulnweb.com/</a>
+                                    NIST SP800 53
                                 </td>
-                                <td>Full Scan</td>
-                                <td>Last run on Mar 7, 2022, 10:56:54 AM</td>
+                                <td>Scan Report</td>
+                                <td>http://testphp.vulnweb.com/</td>
                                 <td>
-                                    <span class="severity severity-high">17</span>
-                                    <span class="severity severity-medium">4</span>
-                                    <span class="severity severity-low">0</span>
-                                    <span class="severity severity-info">0</span>
+                                    Mar 7, 2022, 3:26:54 PM
                                 </td>
                                 <td>
-                                    <span class="status err2">Completed</span>
+                                    Completed
+                                </td>
+                                <td>
+                                    <button class="mui-btn mui-btn--small download">PDF</button>
+                                    <button class="mui-btn mui-btn--small download">HTML</button>
+                                </td>
+                                <td>
+                                    <button class="mui-btn mui-btn--small"><i class="fa-solid fa-trash"></i></button>
                                 </td>
                             </tr>
                             <tr>
@@ -178,18 +185,22 @@
                                     <input type="checkbox" name="checkAll" class="checkSingle">
                                 </td>
                                 <td>
-                                    <a href="">http://testphp.vulnweb.com/</a>
+                                    NIST SP800 53
                                 </td>
-                                <td>Full Scan</td>
-                                <td>Last run on Mar 7, 2022, 10:56:54 AM</td>
+                                <td>Scan Report</td>
+                                <td>http://testphp.vulnweb.com/</td>
                                 <td>
-                                    <span class="severity severity-high">17</span>
-                                    <span class="severity severity-medium">4</span>
-                                    <span class="severity severity-low">0</span>
-                                    <span class="severity severity-info">0</span>
+                                    Mar 7, 2022, 3:26:54 PM
                                 </td>
                                 <td>
-                                    <span class="status err2">Completed</span>
+                                    Completed
+                                </td>
+                                <td>
+                                    <button class="mui-btn mui-btn--small download">PDF</button>
+                                    <button class="mui-btn mui-btn--small download">HTML</button>
+                                </td>
+                                <td>
+                                    <button class="mui-btn mui-btn--small"><i class="fa-solid fa-trash"></i></button>
                                 </td>
                             </tr>
                         </tbody>
