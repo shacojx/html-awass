@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Infosec</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/muicss/0.10.3/css/mui.min.css" rel="stylesheet"
+        type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="main">
+        <div class="header-top mui-flexbox mui-align-center mui-flex-end">
+            <div class="header-right">
+                <div class="mui-dropdown">
+                    <button class="mui-btn mui-dropdown-btn" data-mui-toggle="dropdown">
+                        Administrator
+                        <span class="mui-caret"></span>
+                    </button>
+                    <ul class="mui-dropdown__menu">
+                        <li><a href="#"><i class="fa-solid fa-address-card"></i> Profile</a></li>
+                        <li><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a></li>
+                    </ul>
+                </div>
+                <button class="mui-btn notifi">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="noti-number">15</span>
+                </button>
+            </div>
+        </div>
+        <div id="sidedrawer" class="mui--no-user-select">
+            <div class="mui-divider"></div>
+            <ul class="aside-wrapper">
+                <li>
+                    <a href="dashboard.html">
+                        <strong><i class="fa-solid fa-chart-line"></i> Dashboard</strong>
+                    </a>
+                </li>
+                <li>
+                    <strong><i class="fa-solid fa-bullseye"></i> Targets</strong>
+                    <ul>
+                        <li><a href="listTargets.html">List Target</a></li>
+                        <li><a href="newScan.html">Add Target</a></li>
+                        <li><a href="#">Add Targets</a></li>
+                        <li><a href="#">Target Group</a></li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="listTargets.html">
+                        <strong><i class="fa-solid fa-qrcode"></i> Scans</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="reports.html">
+                        <strong><i class="fa-solid fa-bug"></i> Reports</strong>
+                    </a>
+                </li>
+                <li>
+                    <strong><i class="fa-solid fa-user"></i> Users</strong>
+                    <ul>
+                        <li><a href="user.html">List User</a></li>
+                        <li><a href="addUser.html">Add User</a></li>
+                        <li><a href="#">Account Settings</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <header id="header">
+            <div class="mui-appbar mui--appbar-line-height mui-panel">
+                <div class="mui-container-fluid">
+                    <div class="mui-flexbox mui-between mui-align-center">
+                        <div>
+                            <a
+                                class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer dark">☰</a>
+                            <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer dark">☰</a>
+                            <span class="mui--text-title mui--text-dark">http://testphp.vulnweb.com/</span>
+                        </div>
+                        <div>
+                            <div>
+                                <button class="mui-btn mui-btn--raised" title="Scan">Scan</button>
+                                <button class="mui-btn mui-btn--raised" title="Save">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="content-wrapper" class="wrapper-infoScan scroll-auto">
+            <div class="mui--appbar-height"></div>
+            <div class="mui-container-fluid">
+                <div class="info-container">
+                    <h3>Target Information</h3>
+                    <div class="expansion-panel">
+                        <div class="p">
+                            <div class="mui-textfield mui-textfield--float-label">
+                                <input type="email">
+                                <label>Description</label>
+                            </div>
+                        </div>
+                        <div class="p">
+                            <div class="mui-select">
+                                <select>
+                                    <option> Low </option>
+                                    <option> Normal </option>
+                                    <option> High </option>
+                                    <option> Critical </option>
+                                </select>
+                                <label>Business Criticality</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="expansion-panel hidden">
+                        <div class="expansion-panel-header mui-flexbox mui-between mui-align-center">
+                            <span>Site Login</span>
+                            <div class="expansion-panel-checked">
+                                <input type="checkbox" class="checked">
+                            </div>
+                        </div>
+                        <div class="ng-invalid">
+                            <div class="">
+                                <div class="mui-radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"
+                                            checked>
+                                        Try to auto-login into the site
+                                    </label>
+                                </div>
+                                <div>
+                                    Website's forms authentication in some cases can be identified automatically. The
+                                    automatic detection will try to identify the steps necessary to log in, the
+                                    restricted links which should not be clicked in order to keep the session and the
+                                    pattern by which a valid session can be identified. Please enter your credentials
+                                    below.
+                                </div>
+                                <div class="mui-textfield mui-textfield--float-label">
+                                    <input type="email" required>
+                                    <label>Description</label>
+                                </div>
+                                <div class="mui-textfield mui-textfield--float-label">
+                                    <input type="email" required>
+                                    <label>Description</label>
+                                </div>
+                                <div class="mui-textfield mui-textfield--float-label">
+                                    <input type="email" required>
+                                    <label>Description</label>
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="mui-radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                        Use pre-recorded login sequence
+                                    </label>
+                                </div>
+                                <div>If your website requires forms authentication, you need to record the steps
+                                    required to login on the website. This will be saved as a login sequence file and
+                                    can be used later. You can also specify a section of the website which you do not
+                                    want to be crawled (for example links that will log you out from the website).</div>
+                                <div class="mui-textfield">
+                                    <input type="folder" placeholder="login sequence">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="expansion-panel hidden">
+                        <div class="expansion-panel-header mui-flexbox mui-between mui-align-center">
+                            <span>AcuSensor</span>
+                            <div class="expansion-panel-checked">
+                                <input type="checkbox" class="checked">
+                            </div>
+                        </div>
+                        <div class="ng-invalid">
+                            <p>AcuSensor allows the scanner to gather more information from your PHP, .NET, or Java web
+                                applications, resulting in improved scan results and reduced false positives. Download
+                                and install AcuSensor for this Target before running the web scan.</p>
+                            <p><strong>NOTE:</strong> Avoid using AcuSensor on production systems.</p>
+                            <p><i class="fa-solid fa-circle-exclamation"></i>AcuSensor is automatically enabled on test websites</p>
+                        </div>
+                    </div>
+                    <h3>Crawling</h3>
+                    <div class="expansion-panel">
+                        <div class="expansion-panel-header mui-flexbox mui-between mui-align-center">
+                            <span>Navigation</span>
+                        </div>
+                        <div class="ng-invalid">
+                            <div class="mui-select">
+                                <select>
+                                    <option> Default </option>
+                                    <option> Google Chrome </option>
+                                    <option> Internet Explorer 11 </option>
+                                    <option> Firefox </option>
+                                    <option>  Opera  </option>
+                                    <option>   Safari   </option>
+                                    <option>  iPhone with iOS 6 </option>
+                                    <option> Webkit on Android 4.0.3 </option>
+                                </select>
+                                <label>User Agent</label>
+                            </div>
+                            <div class="mui-select">
+                                <select>
+                                    <option>Auto</option>
+                                    <option>Yes</option>
+                                    <option>No</option>
+                                </select>
+                                <label>Case Sensitive Paths</label>
+                            </div>
+                            <div class="mui-checkbox">
+                                <label>
+                                    <input type="checkbox" value="" checked>
+                                    Limit Crawling to address and sub-directories only
+                                </label>
+                            </div>
+                            <div class="mui-textfield">
+                                <input type="text" placeholder="Excluded Paths">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="expansion-panel">
+                        <div class="expansion-panel-header mui-flexbox mui-between mui-align-center">
+                            <span>Import Files</span>
+                        </div>
+                        <div class="ng-invalid">
+                            <p class="mui-flex mui-align-center">
+                                <i class="fa-solid fa-circle-exclamation"></i>
+                                <span>Files to be imported by crawler at start.</span>
+                            </p>
+                            <p>Accepted formats include text file with a list of URLs (*.txt), Fiddler session archives (*.saz), Swagger files (*.json, *.yaml or *.yml), Web Services Definition Files (*.wsdl), BURP saved files (*.xml) and state files, Selenium (*.html, *.side), Web Application Description Language (*.wadl), ASP.NET Web Forms Project Files (*.csproj, *.vbproj), Paros log files (*.session.data), Postman Collections v2 (*.json) or HTTP archive files (*.har)</p>
+                            <div class="mui-textfield">
+                                <input type="file" placeholder="Excluded Paths">
+                            </div>
+                        </div>
+                    </div>
+                    <h3>HTTP</h3>
+                    <div class="expansion-panel hidden">
+                        <div class="expansion-panel-header mui-flexbox mui-between mui-align-center">
+                            <span>Authentication</span>
+                            <div class="expansion-panel-checked">
+                                <input type="checkbox" class="checked">
+                            </div>
+                        </div>
+                        <div class="ng-invalid">
+                            <div></div>
+                            <p>Basic, Digest, NTLM and Kerberos (Windows only) are supported</p>
+                            <div class="mui-textfield mui-textfield--float-label">
+                                <input type="text">
+                                <label>User name</label>
+                            </div>
+                            <div class="mui-textfield mui-textfield--float-label">
+                                <input type="text">
+                                <label>Password</label>
+                            </div>
+                            <div class="mui-textfield mui-textfield--float-label">
+                                <input type="text">
+                                <label>Retype Password</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="expansion-panel hidden">
+                        <div class="expansion-panel-header mui-flexbox mui-between mui-align-center">
+                            <span>Client Certificate</span>
+                            <div class="expansion-panel-checked">
+                                <input type="checkbox" class="checked">
+                            </div>
+                        </div>
+                        <div class="ng-invalid">
+                            <div class="mui-textfield mui-textfield--float-label">
+                                <input type="file">
+                            </div>
+                            <div class="mui-textfield mui-textfield--float-label">
+                                <input type="text">
+                                <label>Client Certificate URL</label>
+                            </div>
+                            <div class="mui-textfield mui-textfield--float-label">
+                                <input type="text">
+                                <label>Password</label>
+                            </div>
+                            <div class="mui-textfield mui-textfield--float-label">
+                                <input type="text">
+                                <label>Retype Password</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="expansion-panel hidden">
+                        <div class="expansion-panel-header mui-flexbox mui-between mui-align-center">
+                            <span>Proxy Server</span>
+                            <div class="expansion-panel-checked">
+                                <input type="checkbox" class="checked">
+                            </div>
+                        </div>
+                        <div class="ng-invalid">
+                            <div class="mui-select">
+                                <select>
+                                    <option>HTTP</option>
+                                </select>
+                                <label>Protocol</label>
+                            </div>
+                            <div class="mui-textfield mui-textfield--float-label">
+                                <input type="text">
+                                <label>Address</label>
+                            </div>
+                            <div class="mui-textfield mui-textfield--float-label">
+                                <input type="text">
+                                <label>Port</label>
+                            </div>
+                            <div class="mui-checkbox">
+                                <label>
+                                    <input type="checkbox" value="">
+                                    This proxy server requires authentication
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="action mui-flexbox mui-align-center">
+                        <span> Advanced </span>
+                        <span class="status icon-action"></span>
+                    </div>
+                    <div class="box-chart">
+                        <div class="expansion-panel hidden">
+                            <div class="expansion-panel-header mui-flexbox mui-between mui-align-center">
+                                <span>Technologies</span>
+                                <div class="expansion-panel-checked">
+                                    <input type="checkbox" class="checked">
+                                </div>
+                            </div>
+                            <div class="ng-invalid">
+                                <div class="mui-flexbox mui-align-center">
+                                    <i class="fa-solid fa-circle-exclamation"></i>
+                                    <span>Acunetix can automatically detect the Technologies used by the web application.
+                                        Use the following options to force Acunetix to scan the site using settings for the
+                                        selected technology.</span>
+                                </div>
+                                <div class="checkboxes-form mui-flexbox">
+                                    <div class="mui-checkbox">
+                                        <label>
+                                            <input type="checkbox" value="">
+                                            ASP
+                                        </label>
+                                    </div>
+                                    <div class="mui-checkbox">
+                                        <label>
+                                            <input type="checkbox" value="">
+                                            ASP.NET
+                                        </label>
+                                    </div>
+                                    <div class="mui-checkbox">
+                                        <label>
+                                            <input type="checkbox" value="">
+                                            PHP
+                                        </label>
+                                    </div>
+                                    <div class="mui-checkbox">
+                                        <label>
+                                            <input type="checkbox" value="">
+                                            Perl
+                                        </label>
+                                    </div>
+                                    <div class="mui-checkbox">
+                                        <label>
+                                            <input type="checkbox" value="">
+                                            Java/J2EE
+                                        </label>
+                                    </div>
+                                    <div class="mui-checkbox">
+                                        <label>
+                                            <input type="checkbox" value="">
+                                            ColdFusion/Jrun
+                                        </label>
+                                    </div>
+                                    <div class="mui-checkbox">
+                                        <label>
+                                            <input type="checkbox" value="">
+                                            Python
+                                        </label>
+                                    </div>
+                                    <div class="mui-checkbox">
+                                        <label>
+                                            <input type="checkbox" value="">
+                                            Rails
+                                        </label>
+                                    </div>
+                                    <div class="mui-checkbox">
+                                        <label>
+                                            <input type="checkbox" value="">
+                                            FrontPage
+                                        </label>
+                                    </div>
+                                    <div class="mui-checkbox">
+                                        <label>
+                                            <input type="checkbox" value="">
+                                            Node.js
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="expansion-panel hidden">
+                            <div class="expansion-panel-header mui-flexbox mui-between mui-align-center">
+                                <span>Proxy Server</span>
+                                <div class="expansion-panel-checked">
+                                    <input type="checkbox" class="checked">
+                                </div>
+                            </div>
+                            <div class="ng-invalid">
+                                <div class="mui-textfield mui-textfield--float-label">
+                                    <input type="text">
+                                    <label>Custom Headers</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="expansion-panel hidden">
+                            <div class="expansion-panel-header mui-flexbox mui-between mui-align-center">
+                                <span>Custom Cookies</span>
+                                <div class="expansion-panel-checked">
+                                    <input type="checkbox" class="checked">
+                                </div>
+                            </div>
+                            <div class="ng-invalid">
+                                <div class="mui-textfield mui-textfield--float-label">
+                                    <input type="text">
+                                    <label>Add Cookie URL</label>
+                                </div>
+                                <div class="mui-textfield mui-textfield--float-label">
+                                    <input type="text">
+                                    <label>Add Cookie Value</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="expansion-panel hidden">
+                            <div class="expansion-panel-header mui-flexbox mui-between mui-align-center">
+                                <span>Issue Tracker</span>
+                                <div class="expansion-panel-checked">
+                                    <input type="checkbox" class="checked">
+                                </div>
+                            </div>
+                            <div class="ng-invalid">
+                                <div class="mui-select">
+                                    <select>
+                                        <option>Option 1</option>
+                                    </select>
+                                    <label>Issue Tracker</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="expansion-panel">
+                            <div class="expansion-panel-header mui-flexbox mui-between mui-align-center">
+                                <span>Allowed Hosts</span>
+                            </div>
+                            <div class="ng-invalid">
+                                <div class="mui-flexbox mui-align-center">
+                                    <i class="fa-solid fa-circle-exclamation"></i>
+                                    <span>Some web applications span multiple domains. Insert any other domains that should be scanned when scanning this Target. Additional Hosts need to be created as Targets first.</span>
+                                </div>
+                                <button class="mui-btn mui-btn--raised">Add Host</button>
+                            </div>
+                        </div>
+                        <div class="expansion-panel">
+                            <div class="expansion-panel-header mui-flexbox mui-between mui-align-center">
+                                <span>Excluded Hours</span>
+                            </div>
+                            <div class="ng-invalid">
+                                <div class="mui-select">
+                                    <select>
+                                        <option>Use default excluded hours profile</option>
+                                        <option> Allows scans from 9am to 5pm </option>
+                                        <option> Except working hours </option>
+                                        <option> No weekends </option>
+                                    </select>
+                                    <label>Profile</label>
+                                </div>
+                                <p><a href="#">Configure</a> Profiles</p>
+                            </div>
+                        </div>
+                        <div class="expansion-panel hidden">
+                            <div class="expansion-panel-header mui-flexbox mui-between mui-align-center">
+                                <span>Scanning Engine</span>
+                                <div class="expansion-panel-checked">
+                                    <input type="checkbox" class="checked">
+                                </div>
+                            </div>
+                            <div class="ng-invalid">
+                                <div class="mui-select">
+                                    <select>
+                                        <option>Main Installation</option>
+                                    </select>
+                                    <label>Scanning Engine</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="expansion-panel">
+                            <div class="ng-invalid">
+                                <div class="mui-checkbox">
+                                    <label>
+                                        <input type="checkbox" value="">
+                                        Debug scans for this target
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="notification">
+            <div class="notify-item">
+                <p class="high">Report Created</p>
+                <p>Mar 7, 2022, 3:27:05 PM</p>
+            </div>
+            <div class="notify-item">
+                <p><span class="high">Scan done</span> for https://abcd.com/</p>
+                <p>Mar 7, 2022, 3:27:05 PM</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/muicss/0.10.3/js/mui.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

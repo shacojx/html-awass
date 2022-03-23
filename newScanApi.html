@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Infosec</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/muicss/0.10.3/css/mui.min.css" rel="stylesheet"
+        type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="main">
+        <div class="header-top mui-flexbox mui-align-center mui-flex-end">
+            <div class="header-right">
+                <div class="mui-dropdown">
+                    <button class="mui-btn mui-dropdown-btn" data-mui-toggle="dropdown">
+                        Administrator
+                        <span class="mui-caret"></span>
+                    </button>
+                    <ul class="mui-dropdown__menu">
+                        <li><a href="#"><i class="fa-solid fa-address-card"></i> Profile</a></li>
+                        <li><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a></li>
+                    </ul>
+                </div>
+                <button class="mui-btn notifi">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="noti-number">15</span>
+                </button>
+            </div>
+        </div>
+        <div id="sidedrawer" class="mui--no-user-select">
+            <div class="mui-divider"></div>
+            <ul class="aside-wrapper">
+                <li>
+                    <a href="dashboard.html">
+                        <strong><i class="fa-solid fa-chart-line"></i> Dashboard</strong>
+                    </a>
+                </li>
+                <li>
+                    <strong><i class="fa-solid fa-bullseye"></i> Targets</strong>
+                    <ul>
+                        <li><a href="listTargets.html">List Target</a></li>
+                        <li><a href="newScan.html">Add Target</a></li>
+                        <li><a href="#">Add Targets</a></li>
+                        <li><a href="#">Target Group</a></li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="listTargets.html">
+                        <strong><i class="fa-solid fa-qrcode"></i> Scans</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="reports.html">
+                        <strong><i class="fa-solid fa-bug"></i> Reports</strong>
+                    </a>
+                </li>
+                <li>
+                    <strong><i class="fa-solid fa-user"></i> Users</strong>
+                    <ul>
+                        <li><a href="user.html">List User</a></li>
+                        <li><a href="addUser.html">Add User</a></li>
+                        <li><a href="#">Account Settings</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <header id="header">
+            <div class="mui-appbar mui--appbar-line-height mui-panel">
+                <div class="mui-container-fluid">
+                    <div class="mui-flexbox mui-between mui-align-center">
+                        <div>
+                            <a
+                                class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer dark">☰</a>
+                            <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer dark">☰</a>
+                            <span class="mui--text-title mui--text-dark">Add Target API</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="content-wrapper" class="wrapper-api scroll-auto">
+            <div class="mui--appbar-height"></div>
+            <div class="mui-container-fluid">
+                <div class="new-api-container">
+                    <div class="scan-api-input mui-flexbox">
+                        <div class="mui-select">
+                            <select>
+                                <option>GET</option>
+                                <option>POST</option>
+                                <option>PUT</option>
+                                <option>PATCH</option>
+                                <option>DELETE</option>
+                                <option>COPY</option>
+                                <option>HEAD</option>
+                                <option>OPTIONS</option>
+                                <option>LINK</option>
+                                <option>UNLINK</option>
+                                <option>PURGE</option>
+                                <option>LOCK</option>
+                                <option>UNLOCK</option>
+                                <option>PROPFIND</option>
+                                <option>VIEW</option>
+                            </select>
+                        </div>
+                        <div id="rows" class="mui-textfield">
+                            <input type="text" placeholder="URL">
+                        </div>
+                        <button type="submit" class="mui-btn mui-btn--primary">Send</button>
+                    </div>
+                    <div class="scan-body">
+                        <div class="mui-flexbox">
+                            <div class="mui-radio">
+                                <label>
+                                    <input type="radio" class="form" name="optionsRadios" id="optionsRadios2"
+                                        value="option2" checked>
+                                    x-www-form-urlencoded
+                                </label>
+                            </div>
+                            <div class="mui-radio">
+                                <label>
+                                    <input type="radio" class="raw" name="optionsRadios" id="optionsRadios2"
+                                        value="option2">
+                                    raw
+                                </label>
+                            </div>
+                        </div>
+                        <div class="body-form" id="label1">
+                            <div class="mui-flexbox label-input">
+                                <div class="label">KEY</div>
+                                <div class="label">VALUE</div>
+                                <div class="label">DESCRIPTION</div>
+                            </div>
+                            <div class="mui-flexbox label-input">
+                                <div class="value"><input type="text" placeholder="Key"></div>
+                                <div class="value"><input type="text" placeholder="Value"></div>
+                                <div class="value"><input type="text" placeholder="Description"></div>
+                            </div>
+                        </div>
+                        <div class="body-form" id="label2">
+                            <textarea class="input-raw"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="notification">
+            <div class="notify-item">
+                <p class="high">Report Created</p>
+                <p>Mar 7, 2022, 3:27:05 PM</p>
+            </div>
+            <div class="notify-item">
+                <p><span class="high">Scan done</span> for https://abcd.com/</p>
+                <p>Mar 7, 2022, 3:27:05 PM</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/muicss/0.10.3/js/mui.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Infosec</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/muicss/0.10.3/css/mui.min.css" rel="stylesheet"
+        type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="main">
+        <div class="header-top mui-flexbox mui-align-center mui-flex-end">
+            <div class="header-right">
+                <div class="mui-dropdown">
+                    <button class="mui-btn mui-dropdown-btn" data-mui-toggle="dropdown">
+                        Administrator
+                        <span class="mui-caret"></span>
+                    </button>
+                    <ul class="mui-dropdown__menu">
+                        <li><a href="#"><i class="fa-solid fa-address-card"></i> Profile</a></li>
+                        <li><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a></li>
+                    </ul>
+                </div>
+                <button class="mui-btn notifi">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="noti-number">15</span>
+                </button>
+            </div>
+        </div>
+        <div id="sidedrawer" class="mui--no-user-select">
+            <div class="mui-divider"></div>
+            <ul class="aside-wrapper">
+                <li class="active">
+                    <a href="dashboard.html">
+                        <strong><i class="fa-solid fa-chart-line"></i> Dashboard</strong>
+                    </a>
+                </li>
+                <li>
+                    <strong><i class="fa-solid fa-bullseye"></i> Targets</strong>
+                    <ul>
+                        <li><a href="listTargets.html">List Target</a></li>
+                        <li><a href="newScan.html">Add Target</a></li>
+                        <li><a href="#">Add Targets</a></li>
+                        <li><a href="#">Target Group</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="listTargets.html">
+                        <strong><i class="fa-solid fa-qrcode"></i> Scans</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="reports.html">
+                        <strong><i class="fa-solid fa-bug"></i> Reports</strong>
+                    </a>
+                </li>
+                <li>
+                    <strong><i class="fa-solid fa-user"></i> Users</strong>
+                    <ul>
+                        <li><a href="user.html">List User</a></li>
+                        <li><a href="addUser.html">Add User</a></li>
+                        <li><a href="#">Account Settings</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <header id="header">
+            <div class="mui-appbar mui--appbar-line-height mui-panel">
+                <div class="mui-container-fluid">
+                    <div class="mui-flexbox mui-between mui-align-center">
+                        <div>
+                            <a
+                                class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer dark">☰</a>
+                            <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer dark">☰</a>
+                            <span class="mui--text-title mui--text-dark">Dashboard</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="content-wrapper" class="wrapper-newScan wrapper-addUser scroll-auto">
+            <div class="mui--appbar-height"></div>
+            <div class="mui-container-fluid">
+                <div class="mui-panel mui-card mui-flexbox mui-between">
+                    <div class="item">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                    <div class="item">
+                        <canvas id="myChart2"></canvas>
+                    </div>
+                    <div class="item">
+                        <canvas id="myChart3"></canvas>
+                    </div>
+                </div>
+                <div class="mui-row">
+                    <div class="mui-col-md-12">
+                        <div class="mui-panel mui-card mui-flexbox mui-around mui-align-center stats">
+                            <div class="stats-item text-center">
+                                <div class="stats-label">Scan Duration</div>
+                                <div class="stats-value">0m 56s</div>
+                            </div>
+                            <div class="stats-item text-center">
+                                <div class="stats-label">Requests</div>
+                                <div class="stats-value">1,046</div>
+                            </div>
+                            <div class="stats-item text-center">
+                                <div class="stats-label">Average Response Time</div>
+                                <div class="stats-value">191ms</div>
+                            </div>
+                            <div class="stats-item text-center">
+                                <div class="stats-label">Locations</div>
+                                <div class="stats-value">119</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mui-row">
+                    <div class="mui-col-md-6">
+                        <div class="mui-panel mui-card">
+                            <div class="mui-card-header mui-flexbox mui-between mui-align-center">
+                                <span class="mui-card-title">Target Information</span>
+                            </div>
+                            <div class="mui-card-body">
+                                <div class="mui-item mui-flexbox mui-between">
+                                    <span>Address</span>
+                                    <a href="#">http://testphp.vulnweb.com/</a>
+                                </div>
+                                <div class="mui-item mui-flexbox mui-between">
+                                    <span>Server</span>
+                                    <span>nginx/1.19.0</span>
+                                </div>
+                                <div class="mui-item mui-flexbox mui-between">
+                                    <span>Operating System</span>
+                                    <span>Unknown</span>
+                                </div>
+                                <div class="mui-item mui-flexbox mui-between">
+                                    <span>Identified Technologies</span>
+                                    <span>PHP</span>
+                                </div>
+                                <div class="mui-item mui-flexbox mui-between">
+                                    <span>Responsive</span>
+                                    <span>Yes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mui-col-md-6">
+                        <div class="mui-panel mui-card">
+                            <div class="mui-card-header mui-flexbox mui-between mui-align-center">
+                                <span class="mui-card-title">Latest Alerts</span>
+                                <div class="mui-flex star-inserted">
+                                    <span class="severity severity-high">17</span>
+                                    <span class="severity severity-medium">4</span>
+                                    <span class="severity severity-low">0</span>
+                                    <span class="severity severity-info">0</span>
+                                </div>
+                            </div>
+                            <div class="mui-card-body">
+                                <div class="mui-item mui-flexbox mui-between">
+                                    <a href="#" class="status bug">Cross site scripting</a>
+                                    <span>Mar 7, 2022, 2:55:17 PM</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="action mui-flexbox mui-align-center">
+                    <span>Show Trends</span>
+                    <span class="status icon-action"></span>
+                </div>
+                <div class="box-chart">
+                    <div class="mui-panel mui-card">
+                        <div class="mui-card-header mui-flexbox mui-between mui-align-center">
+                            <span>Open Vulnerabilities for the past 12 months</span>
+                        </div>
+                        <div class="mui-card-body">
+                            <canvas id="myChart4"></canvas>
+                        </div>
+                    </div>
+                    <div class="mui-panel mui-card">
+                        <div class="mui-card-header mui-flexbox mui-between mui-align-center">
+                            <span>Average days to remediate</span>
+                        </div>
+                        <div class="mui-card-body">
+                            <canvas id="myChart5"></canvas>
+                        </div>
+                    </div>
+                    <div class="mui-panel mui-card">
+                        <div class="mui-card-header mui-flexbox mui-between mui-align-center">
+                            <span>Vulnerabilities found in the last 12 months</span>
+                        </div>
+                        <div class="mui-card-body">
+                            <canvas id="myChart6"></canvas>
+                        </div>
+                    </div>
+                    <div class="mui-panel mui-card">
+                        <div class="mui-card-header mui-flexbox mui-between mui-align-center">
+                            <span>Average vulnerabilities age</span>
+                        </div>
+                        <div class="mui-card-body">
+                            <canvas id="myChart7"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="notification">
+                <div class="notify-item">
+                    <p class="high">Report Created</p>
+                    <p>Mar 7, 2022, 3:27:05 PM</p>
+                </div>
+                <div class="notify-item">
+                    <p><span class="high">Scan done</span> for https://abcd.com/</p>
+                    <p>Mar 7, 2022, 3:27:05 PM</p>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/muicss/0.10.3/js/mui.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+        <script src="js/main.js"></script>
+</body>
+
+</html>

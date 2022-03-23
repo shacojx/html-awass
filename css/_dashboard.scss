@@ -1,47 +1,72 @@
 .mui-card {
-    // height: 200px;
-    &-header {
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 10px;
-      .mui-card-title {
-        font-size: 17px;
-      }
+  // height: 200px;
+  &-header {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    .mui-card-title {
+      font-size: 17px;
     }
-    &-body {
-      overflow-y: auto;
-      margin-top: 10px;
-      padding-right: 5px;
-      height: 75%;
-      &::-webkit-scrollbar {
-        width: 4px;
-      }
-      &::-webkit-scrollbar-track {
-        background: #f1f1f1;
-      }
-      &::-webkit-scrollbar-thumb {
-        background: #888;
-        border-radius: 5px;
-      }
-      .mui-item {
-        padding: 5px 0;
-        span:first-child {
-          width: 60%;
-        }
+  }
+  &-body {
+    overflow-y: auto;
+    margin-top: 10px;
+    padding-right: 5px;
+    height: 75%;
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 5px;
+    }
+    .mui-item {
+      padding: 5px 0;
+      span:first-child {
+        width: 60%;
       }
     }
   }
-  .stats {
-    height: fit-content;
-    &::before {
-      content: none;
-    }
-    &::after {
-      content: none;
-    }
-    &-label {
-      font-size: 18px;
-    }
-    &-value {
-      font-size: 28px;
+}
+.stats {
+  height: fit-content;
+  &::before {
+    content: none;
+  }
+  &::after {
+    content: none;
+  }
+  &-label {
+    font-size: 18px;
+  }
+  &-value {
+    font-size: 28px;
+  }
+}
+.action{
+  justify-content: center;
+  margin: 15px auto;
+  cursor: pointer;
+  gap: 5px;
+  font-size: 17px;
+  &.show{
+    .icon-action{
+      &::before{
+        content: '\f106';
+      }
     }
   }
+  .icon-action{
+    &::before{
+      content: '\f107';
+    }
+  }
+}
+.box-chart{
+  display: none;
+  &.show{
+    display: block;
+  }
+}

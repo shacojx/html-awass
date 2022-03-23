@@ -163,8 +163,6 @@ h1, h2, h3, h4, h5 {
 .status::before {
   font: var(--fa-font-solid);
   content: "\f071";
-  width: 16px;
-  height: 16px;
   position: absolute;
   left: 0;
   top: 50%;
@@ -1053,8 +1051,8 @@ h1, h2, h3, h4, h5 {
 .wrapper-infoScan .info-container .expansion-panel {
   background-color: #fff;
   margin: 16px 0;
-  -webkit-box-shadow: 0 3px 1px -2px #00000033, 0 2px 2px 0 #00000024, 0 1px 5px 0 #0000001f;
-          box-shadow: 0 3px 1px -2px #00000033, 0 2px 2px 0 #00000024, 0 1px 5px 0 #0000001f;
+  -webkit-box-shadow: 0 3px 1px -2px #00000033, 0 2px 2px 0 #00000024, 0 1px 5px 0 #0000001f;
+          box-shadow: 0 3px 1px -2px #00000033, 0 2px 2px 0 #00000024, 0 1px 5px 0 #0000001f;
 }
 
 .wrapper-infoScan .info-container .expansion-panel .p {
@@ -1088,16 +1086,16 @@ h1, h2, h3, h4, h5 {
 }
 
 .wrapper-infoScan .info-container .expansion-panel .expansion-panel-header {
-  padding: 10px 24px;
+  padding: 15px 24px;
 }
 
 .wrapper-infoScan .info-container .expansion-panel .checked {
   -webkit-appearance: none;
   -moz-appearance: none;
        appearance: none;
-  padding: 16px 30px;
+  padding: 13px 27px;
   border-radius: 16px;
-  background: radial-gradient(circle 12px, white 100%, transparent calc(100% + 1px)) #ccc -14px;
+  background: radial-gradient(circle 9px, white 100%, transparent calc(100% + 1px)) #ccc -14px;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
@@ -1105,6 +1103,25 @@ h1, h2, h3, h4, h5 {
 .wrapper-infoScan .info-container .expansion-panel :checked {
   background-color: #e11f26;
   background-position: 14px;
+}
+
+.wrapper-infoScan .info-container .expansion-panel .ng-invalid {
+  padding: 10px 60px;
+}
+
+.wrapper-infoScan .info-container .expansion-panel .checkboxes-form {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.wrapper-infoScan .info-container .expansion-panel .checkboxes-form .mui-checkbox {
+  width: 30%;
+  margin: 5px auto;
+}
+
+.wrapper-infoScan .info-container .expansion-panel.hidden {
+  height: 60px;
+  overflow: hidden;
 }
 
 .wrapper-users .true::before {
@@ -1185,5 +1202,90 @@ h1, h2, h3, h4, h5 {
 
 .stats-value {
   font-size: 28px;
+}
+
+.action {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 15px auto;
+  cursor: pointer;
+  gap: 5px;
+  font-size: 17px;
+}
+
+.action.show .icon-action::before {
+  content: '\f106';
+}
+
+.action .icon-action::before {
+  content: '\f107';
+}
+
+.box-chart {
+  display: none;
+}
+
+.box-chart.show {
+  display: block;
+}
+
+.wrapper-api .mui-container-fluid {
+  background: transparent !important;
+}
+
+.wrapper-api .new-api-container {
+  max-width: 900px;
+  margin: auto;
+  display: block;
+  padding: 30px;
+  background: #fff;
+}
+
+.wrapper-api .new-api-container .scan-api-input .mui-select {
+  width: 10%;
+}
+
+.wrapper-api .new-api-container .scan-api-input .mui-textfield {
+  width: 80%;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.wrapper-api .new-api-container .scan-body .mui-radio {
+  margin: auto 15px;
+}
+
+.wrapper-api .new-api-container .scan-body .body-form {
+  margin-top: 20px;
+}
+
+.wrapper-api .new-api-container .scan-body .body-form .label-input {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-weight: 600;
+}
+
+.wrapper-api .new-api-container .scan-body .body-form .label-input > div {
+  border: 1px solid #00000042;
+  padding: 10px;
+  width: 30%;
+}
+
+.wrapper-api .new-api-container .scan-body .body-form .label-input > div input {
+  border: none;
+  outline: none;
+}
+
+.wrapper-api .new-api-container .scan-body .input-raw {
+  width: 100%;
+  height: 350px;
+  border: 1px solid #00000042;
+  padding: 5px;
+  outline: none;
+  overflow: hidden;
+  resize: vertical;
 }
 /*# sourceMappingURL=style.css.map */

@@ -121,22 +121,37 @@ jQuery(function ($) {
       $(this).attr("aria-expanded", "true");
     }
   });
-  $('.path-action').click(function(){
-    $(this).parent().toggleClass('high');
-    if($(this).parent().hasClass('high')){
-      $(this).text('Include');
+  $(".path-action").click(function () {
+    $(this).parent().toggleClass("high");
+    if ($(this).parent().hasClass("high")) {
+      $(this).text("Include");
+    } else {
+      $(this).text("Exclude");
     }
-    else{
-      $(this).text('Exclude');
+  });
+  setInterval(function () {
+    if ($(".form").is(":checked") == true) {
+      $("#label1").css("display", "block");
+      $("#label2").css("display", "none");
+    } else if ($(".raw").is(":checked") == true) {
+      $("#label2").css("display", "block");
+      $("#label1").css("display", "none");
     }
+  });
+
+  $('.checked').click(function(){
+    $(this).parent().parent().parent().toggleClass('hidden')
+  })
+  $('.value input').keyup(function(){
+    $('#label1').append("<div><div class='mui-flexbox label-input'><div class='value'><input type='text' placeholder='Description'></div><div class='value'><input type='text' placeholder='Key'></div><div class='value'><input type='text' placeholder='Value'></div></div></div>")
+    console.log($('.value input').length);
   })
 });
-
 var toggler = document.getElementsByClassName("caret");
 var i;
 
 for (i = 0; i < toggler.length; i++) {
-  toggler[i].addEventListener("click", function() {
+  toggler[i].addEventListener("click", function () {
     this.parentElement.querySelector(".nested").classList.toggle("active");
   });
 }
@@ -145,51 +160,69 @@ var toggler = document.getElementsByClassName("path-action");
 var i;
 
 for (i = 0; i < toggler.length; i++) {
-  toggler[i].addEventListener("click", function() {
-    this.parentElement.parentElement.querySelector(".nested").classList.toggle("high");
+  toggler[i].addEventListener("click", function () {
+    this.parentElement.parentElement
+      .querySelector(".nested")
+      .classList.toggle("high");
   });
 }
 
 const data = {
-  labels: [
-    'High',
+  labels: ["High"],
+  datasets: [
+    {
+      label: "My First Dataset",
+      data: [300],
+      backgroundColor: ["rgb(255, 99, 132)"],
+      hoverOffset: 4,
+    },
   ],
-  datasets: [{
-    label: 'My First Dataset',
-    data: [300],
-    backgroundColor: [
-      'rgb(255, 99, 132)',
-    ],
-    hoverOffset: 4
-  }]
 };
 
 const config = {
-  type: 'doughnut',
+  type: "doughnut",
   data: data,
   options: {
     responsive: true,
     plugins: {
       legend: {
-        position: 'top',
+        position: "top",
       },
       title: {
         display: true,
-        text: 'Chart.js Doughnut Chart'
-      }
-    }
-  }
+        text: "Chart.js Doughnut Chart",
+      },
+    },
+  },
 };
 
-const myChart = new Chart(
-  document.getElementById('myChart'),
-  config
-);
-const myChart2 = new Chart(
-  document.getElementById('myChart2'),
-  config
-);
-const myChart3 = new Chart(
-  document.getElementById('myChart3'),
-  config
-);
+$('.action').click(function(){
+  $(this).toggleClass('show');
+  $('.box-chart').toggleClass('show');
+})
+
+const myChart = new Chart(document.getElementById("myChart"), config);
+const myChart2 = new Chart(document.getElementById("myChart2"), config);
+const myChart3 = new Chart(document.getElementById("myChart3"), config);
+
+const labels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+const data5 = {
+  labels: labels,
+  datasets: [
+    {
+      label: "My First Dataset",
+      data: [0, 5, 2, 10, 7, 9, 1, 8, 3, 4, 6, 5],
+      fill: false,
+      borderColor: "red",
+      tension: 0.1,
+    },
+  ],
+};
+const config2 = {
+  type: "line",
+  data: data5,
+};
+const myChart4 = new Chart(document.getElementById("myChart4"), config2);
+const myChart5 = new Chart(document.getElementById("myChart5"), config2);
+const myChart6 = new Chart(document.getElementById("myChart6"), config2);
+const myChart7 = new Chart(document.getElementById("myChart7"), config2);
